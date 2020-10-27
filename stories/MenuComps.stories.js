@@ -9,7 +9,7 @@ export default {
 
     export const MenuSection = () => (
         <MenuBox 
-
+            
         
         />
       );
