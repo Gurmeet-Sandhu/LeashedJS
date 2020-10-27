@@ -1,0 +1,7 @@
+.menubar {
+    width: 1451px;
+    height:78px;
+    background-color: #F2F4FB;
+    box-shadow: 3px 3px 10px black;
+    display: flex;
+}
