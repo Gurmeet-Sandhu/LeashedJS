@@ -9,7 +9,8 @@ export default {
 
     export const QueSection = () => (
         <QueBox 
-            
-        
+            Header1="Question #1"
+            Question1="First question will be here"
+            Pagenumber1="1/5"
         />
       );
