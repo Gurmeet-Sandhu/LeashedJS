@@ -63,7 +63,7 @@ height: 45px;
 `;
 
 const Pagenumber = styled.div`
-margin-top:15px;
+margin-top:20px;
 margin-left:45px;
 width:223px;
 float:center;
