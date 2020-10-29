@@ -15,6 +15,8 @@ export default {
             Menu2="Training"
             Menu3="Achievement"
             Menu4="Resources"
-        
+            Menu5="Team Discord"
+            Menu6="Contact Us"
+            Menu7="Policy"
         />
       );

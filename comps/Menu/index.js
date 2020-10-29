@@ -26,7 +26,6 @@ const TopContainer = styled.div`
 const BackButton = styled.div`
     width: 50px; 
     height: 50px;
-    background: yellow;
     positon: relative; 
     margin-right: 235px;
 `;
@@ -61,25 +60,38 @@ const MenuCat = styled.div`
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
     margin: 35px;
+    margin-top: 30px;
 `;
 
 const SmallTxt = styled.div`
-
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #1B2121;
+    opacity: 0.8;
+    margin: 9px;
+    margin-left: 35px;
 `;
 
 const Logo = styled.div`
-
+    width: 133px; 
+    height: 30px;
+    background-color: black;
 `;
 
 
 
-const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4 })=>{
+const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7,  })=>{
   return (
     <MenuContainer>
 
         <TopContainer> 
-            <BackButton></BackButton>
-            <Img></Img>
+            <BackButton>
+                <img src=" /Lock.png" />
+
+            </BackButton>
+            <Img>
+
+            </Img>
             <NameBox><h1>{Name1} &amp; {Name2}</h1></NameBox>
             <EditBox>Edit Profile</EditBox>
         </TopContainer>
@@ -88,9 +100,9 @@ const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4 })=>{
             <MenuCat>{Menu2}</MenuCat>
             <MenuCat>{Menu3}</MenuCat>
             <MenuCat>{Menu4}</MenuCat>
-            <SmallTxt></SmallTxt>
-            <SmallTxt></SmallTxt>
-            <SmallTxt></SmallTxt>
+            <SmallTxt>{Menu5}</SmallTxt>
+            <SmallTxt>{Menu6}</SmallTxt>
+            <SmallTxt>{Menu7}</SmallTxt>
             <Logo></Logo>
         </BottomContainer>
     </MenuContainer>
