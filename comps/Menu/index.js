@@ -27,10 +27,11 @@ const BackButton = styled.div`
     width: 50px; 
     height: 50px;
     positon: relative; 
-    margin-right: 235px;
+    margin-right: 230px;
+    cursor: pointer;
 `;
 
-const Img = styled.div`
+const Img = styled.img`
     width: 184px; 
     height: 184px;
     border-radius: 25px;
@@ -39,12 +40,24 @@ const Img = styled.div`
 `;
 
 const NameBox = styled.div`
-    font-size: 15px;
+    font-size: 13px;
     margin: -10px;
+    color: white;
+    display: flex; 
+    flex-direction: row;
+    .Name1 {
+        color:#F9CB40;
+        
+    }
+    .Name2 {
+        color: #FF715B;
+    }
 `;
 
 const EditBox = styled.div`
     font-weight: lighter;
+    color: white;
+    cursor: pointer;
 `;
 
 //Bottom Container Styles
@@ -60,7 +73,8 @@ const MenuCat = styled.div`
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
     margin: 35px;
-    margin-top: 30px;
+    margin-top: 20px;
+    cursor: pointer;
 `;
 
 const SmallTxt = styled.div`
@@ -70,12 +84,16 @@ const SmallTxt = styled.div`
     opacity: 0.8;
     margin: 9px;
     margin-left: 35px;
+    cursor: pointer;
 `;
 
-const Logo = styled.div`
+const Logo = styled.img`
     width: 133px; 
     height: 30px;
-    background-color: black;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 75px;
+    cursor: pointer;
 `;
 
 
@@ -86,13 +104,12 @@ const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7,
 
         <TopContainer> 
             <BackButton>
-                <img src=" /Lock.png" />
+                <img src="/Back.png" />
 
             </BackButton>
-            <Img>
-
+            <Img src="/img-placeholder.png" width="100%" height="100%">
             </Img>
-            <NameBox><h1>{Name1} &amp; {Name2}</h1></NameBox>
+            <NameBox><h1 className="Name1">{Name1}</h1> <h1>&nbsp; &amp; &nbsp;</h1> <h1 className="Name2">{Name2}</h1></NameBox>
             <EditBox>Edit Profile</EditBox>
         </TopContainer>
         <BottomContainer> 
@@ -103,7 +120,8 @@ const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7,
             <SmallTxt>{Menu5}</SmallTxt>
             <SmallTxt>{Menu6}</SmallTxt>
             <SmallTxt>{Menu7}</SmallTxt>
-            <Logo></Logo>
+            <Logo src="/Horizontal Logo.png">
+            </Logo>
         </BottomContainer>
     </MenuContainer>
 )

@@ -2,7 +2,7 @@ import React from 'react';
 import Signup from '../comps/SignupTitle';
 
 export default {
-    title: 'Signup Title',
+    title: 'Leashed/Signup Title',
     component: Signup
 };
 
