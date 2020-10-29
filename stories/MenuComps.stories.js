@@ -9,7 +9,12 @@ export default {
 
     export const MenuSection = () => (
         <MenuBox 
-            
+            Name1="Rocky"
+            Name2="Rocky"
+            Menu1="Home"
+            Menu2="Training"
+            Menu3="Achievement"
+            Menu4="Resources"
         
         />
       );
