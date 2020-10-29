@@ -2,19 +2,19 @@ import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
 
 
-const ButtonWrapper = styled.button`
+const ProfButtonWrapper = styled.button`
     width:275px;
     height:45px;
     display:flex;
     justify-content:center;
     align-items:center;
     padding:4px;
-    border:none;
+    border:${props=>props.highlighted ? "none" : "5px solid #F9CB40"};
     border-radius:25px;
     background-color:${props=>props.highlighted ? "#F9CB40" : "#fff"};
 `;
 
-const ButtonText = styled.div`
+const ProfButtonText = styled.div`
     display:inline-flex;
     border:none;
     margin:5px;
@@ -25,13 +25,13 @@ const ButtonText = styled.div`
 
 const Button2= ({text,bgColor,highlighted}) => {
     const [highlight, setHighlight] = useState(true);
-    return <ButtonWrapper highlighted={highlight} 
+    return <ProfButtonWrapper highlighted={highlight} 
             bgColor={bgColor} 
             onClick={()=> { 
                 setHighlight(!highlight);
             }}>
-            <ButtonText>{text}</ButtonText>
-            </ButtonWrapper>
+            <ProfButtonText>{text}</ProfButtonText>
+            </ProfButtonWrapper>
 }
 
 Button2.defaultProps = {

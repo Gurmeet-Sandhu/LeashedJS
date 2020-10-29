@@ -29,7 +29,7 @@ const Button= ({text,bgColor}) => {
 }
 
 Button.defaultProps = {
-    text : "defualt",
+    text : "default",
     bgColor : "#111"
 }
 
