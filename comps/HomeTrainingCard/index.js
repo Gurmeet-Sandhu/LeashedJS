@@ -18,40 +18,48 @@ const TrainingCardHomeBox = styled.div `
     align-items:center;
 `
 
-const TrainingCardHomeText = styled.div`
+const TrainingCardHomeTitle = styled.div`
     font-size:28px;
     color:white;
     font-weight:bold;
-    max-width:150px;
-    margin-left:25px;
-    margin-bottom:20px;
+    max-width:160px;
+    margin-left:22px;
+    margin-bottom:10px;
 `
 
 const TrainingCardHomeDayText = styled.div`
-    font-size:20px;
     color:white;
-    margin-left:15px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    margin-left:20px;
+    min-width:50px;
 `
 
 const TrainingCardHomeYesterdayText = styled.div`
-    font-size:14px;
-    color: #F9CB40; 
-    line-height:200px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #F9CB40;
+    margin-top:110px;
+    margin-left:-60px;
 `
 
-const TrainingCardHomeYesterdayTextBox = styled.div`
-
-`
-
-const HomeTrainingCard = () =>{
+const HomeTrainingCard = ({title, day, date}) =>{
     return <CardsContainer>
         <TrainingCardHome>
             <TrainingCardHomeBox >
-                <TrainingCardHomeText>Master the Dog Walk</TrainingCardHomeText>
-                <TrainingCardHomeDayText >DAY 5 </TrainingCardHomeDayText>
+                <TrainingCardHomeTitle>{title}</TrainingCardHomeTitle>
+                <TrainingCardHomeDayText>{day}</TrainingCardHomeDayText>
+                    <TrainingCardHomeYesterdayText>{date}</TrainingCardHomeYesterdayText>
             </TrainingCardHomeBox>
         </TrainingCardHome>
     </CardsContainer>
+}
+HomeTrainingCard.defaultProps ={
+    title: "Default Title Goes Here",
+    day: "Day #",
+    date: "Defaultday",
 }
 
 export default HomeTrainingCard;

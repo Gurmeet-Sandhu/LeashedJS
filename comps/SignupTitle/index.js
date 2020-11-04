@@ -14,11 +14,16 @@ const SignupSubtitle = styled.div`
     font-size: 20px;
 `
 
-const Signup = (title,subtitle) =>{
+const Signup = ({title,subtitle}) =>{
     return <SignupContainer>
-        <SignupTitle>Welcome!</SignupTitle>
-        <SignupSubtitle>Get the best from Leashed.</SignupSubtitle>
+        <SignupTitle>{title}</SignupTitle>
+        <SignupSubtitle>{subtitle}</SignupSubtitle>
     </SignupContainer>
+}
+
+Signup.defaultProps ={
+    title:"Title",
+    subtitle:"Subtitle goes here",
 }
 
 export default Signup;
