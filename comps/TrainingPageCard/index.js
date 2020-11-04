@@ -13,28 +13,32 @@ const TrainingCard = styled.div`
     border-radius: 30px;
     display:flex;
     justify-content:center;
-
+    align-items:center;
 `
 
 const TrainingCardTitle = styled.div`
     color:white;
     font-size:28px;
-    margin-top:40px;
-    margin-right:250px;
-    max-width:20px;
     font-weight:bold;
+    max-width:190px;
+    margin-right:100px;
+    margin-bottom:30px;
 `
 
-const TrainingPageCard = () =>{
+const TrainingArrow = styled.div`
+    background-image: url("TrainingArrow.png")
+
+`
+const TrainingPageCard = ({title}) =>{
     return <TrainingCardContainer>
         <TrainingCard>
-            <TrainingCardTitle>Training Title</TrainingCardTitle>
+            <TrainingCardTitle>{title}</TrainingCardTitle>
         </TrainingCard>
     </TrainingCardContainer>
 }
 
 TrainingPageCard.defaultProps = {
-    title:"Training Title",
+    title:"Deafult Title Goes Here",
 }
 
 export default TrainingPageCard;

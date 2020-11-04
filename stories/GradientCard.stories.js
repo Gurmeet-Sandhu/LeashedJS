@@ -6,4 +6,4 @@ export default {
     component: GradientCard
 };
 
-export const GradientCardComp = () => <GradientCard text="test" />;
+export const GradientCardComp = () => <GradientCard />;

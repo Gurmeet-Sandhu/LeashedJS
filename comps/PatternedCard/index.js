@@ -17,17 +17,24 @@ const PatternedCardTitle = styled.div`
     margin-left:35px;
     color:white;
 `
-
-const PatternedCard = (text) => {
+const DateText = styled.div`
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    text-align: right;
+    margin-top:120px;
+    color:white;
+`
+const PatternedCard = ({text,datetext,textcolor}) => {
     return <PatternedCardContaienr>
-        <PatternedCardTitle>
-            Completed How To Use Treats
-        </PatternedCardTitle>
+        <PatternedCardTitle>{text}</PatternedCardTitle>
+        <DateText>{datetext}</DateText>
     </PatternedCardContaienr>
 }
 
 PatternedCard.defaultProps ={
-    text:"test"
+    text:"Default text goes here",
+    datetext:"Month 01, 2020",
 }
 
 
