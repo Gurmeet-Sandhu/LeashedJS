@@ -9,7 +9,10 @@ export default {
 
     export const LogSection = () => (
         <LogBox 
-            
+            LoginPart="Login"
+            SignupPart="Signup"
+            EmailPart="Your Email"
+            PasswordPart="Your Password"
         />
       );
    
