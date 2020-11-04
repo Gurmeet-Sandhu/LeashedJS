@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const Logboxcontainer = styled.div`
 width: 330px;
 margin-left:8px;
@@ -144,7 +145,7 @@ const SignupBox = ({LoginPart, SignupPart, UsernamePart, FullnamePart, YourEmail
           <Yourpassbox>{YourEmail}</Yourpassbox>
           <Yourpassinput>emmaduffy1001@gmail.com</Yourpassinput>
           <Straightline></Straightline>
-          <Logbutton><Firsttext>Sign Up</Firsttext></Logbutton>
+      
           
       
 

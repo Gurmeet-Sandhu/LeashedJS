@@ -7,10 +7,12 @@ const InputBox = styled.input`
     border-bottom: 1px solid #1B2121;
     width:270px;
     outline:none;
+    margin-bottom:35px;
 `
 const Label = styled.div`
     font-size: 20px;
     text-align: left;
+    margin-bottom:10px;
 
 `
 
