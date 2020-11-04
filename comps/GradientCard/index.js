@@ -16,15 +16,25 @@ const GradientCardTitle = styled.div`
     max-width:200px;
     margin-left:35px;
 `
+const DayText = styled.div`
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    text-align: right;
+    margin-top:120px;
+    margin-left:10px;
+`
 
-const GradientCard = (text) => {
-    return <GradientCardContainer>
-        <GradientCardTitle text={text}> Completed Master The Dog Walk</GradientCardTitle>
+const GradientCard = ({text, daytext}) => {
+    return <GradientCardContainer> 
+        <GradientCardTitle>{text}</GradientCardTitle>
+        <DayText>{daytext}</DayText>
     </GradientCardContainer>
 }
 
 GradientCard.defaultProps ={
+    text:"Default text goes here",
+    daytext:"Default Day"
 }
-
 
 export default GradientCard;

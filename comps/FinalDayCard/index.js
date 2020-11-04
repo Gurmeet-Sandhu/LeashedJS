@@ -36,17 +36,18 @@ const FinalDaySmallText = styled.div`
     color: rgba(27, 33, 33, 0.8);
 `
 
-const FinalDayCard = () => {
+const FinalDayCard = ({day, text,completion}) => {
     return <FinalDayCardContainer>
-        <FinalDayCardDayTitle>Day 7</FinalDayCardDayTitle>
-        <FinalDayCardSubtitle>Final Day!</FinalDayCardSubtitle>
-        <FinalDaySmallText>Incomplete</FinalDaySmallText>
+        <FinalDayCardDayTitle>{day}</FinalDayCardDayTitle>
+        <FinalDayCardSubtitle>{text}</FinalDayCardSubtitle>
+        <FinalDaySmallText>{completion}</FinalDaySmallText>
     </FinalDayCardContainer>
 }
 
 FinalDayCard.defaultProps ={
-
+    day: "Default Day",
+    text: "Default Text",
+    completion: "Default Completion",
 }
-
 
 export default FinalDayCard;
