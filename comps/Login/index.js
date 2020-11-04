@@ -1,123 +1,55 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../../comps/Button';
+import Inputs from '../../comps/Inputs'
 
 const Logboxcontainer = styled.div`
-width: 330px;
-margin-left:8px;
+width: 100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+`;
+
+const Headerpart = styled.div`
+  width:80%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 `;
 
 const Logintext = styled.div`
-float:left;
-margin-top:-50px;
 font-family: Mukta Mahee, Sans-serif;
 font-style: ExtraBold;
 font-size:30px;
 `;
 
 const Signuptext = styled.div`
-float:right;
-margin-top:-50px;
 font-family: Mukta Mahee, Sans-serif;
 font-style: ExtraBold;
 font-size:30px;
-color: rgba(27, 33, 33, 0.5);
+opacity:50%;
 `;
 
 const Logincontainer = styled.div`
-width:362px;
-height: 547.49px;
-background: #ffffff;
-border: 1px solid #E5E5E5;
-box-sizing: border-box;
-border-radius: 40px;
-`;
+  width:75%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  border:1px solid black;
+  background-color:#fff;
+  padding:40px;
+  border-radius:25px;
 
-const Headerpart = styled.div`
-width:300x;
-margin-left:40px;
-margin-bottom: 40px;
-`;
 
-const Youremailbox = styled.div`
-float:left;
-margin-left:50px;
-margin-top:50px;
-font-family: Poppins, Sans-serif;
-font-style: SemiBold;
-font-size:20px;
-color:#2F52E0;
-`;
-
-const Yourinput = styled.div`
-float:left;
-margin-left:-92px;
-margin-top:90px;
-`;
-
-const Straightline = styled.div`
-margin-top:110px;
-text-align:center;
-justify-contents: center;
-border-top: 1px solid black;
-width:260px;
-margin-left:50px;
-`;
-
-const Yourpassinput = styled.div`
-float:left;
-margin-left:-132px;
-margin-top:90px;
-`;
-
-const Yourpassbox = styled.div`
-float:left;
-margin-left:50px;
-margin-top:50px;
-font-family: Poppins, Sans-serif;
-font-style: SemiBold;
-font-size:20px;
-color:#2F52E0;
-`;
-
-const Forgotpass = styled.div`
-float:right;
-width:170px;
-margin-top:10px;
-font-family: Mukta Mahee, Sans-serif;
-font-style: normal;
-font-size:14px;
-`;
-
-const Logbutton = styled.div`
-margin-top:75px;
-margin-left:40px;
-width:274px;
-height: 45px;
-border-radius: 193px;
-border: 4px solid #2F52E0;
-fill: solid;
-background-color: #2F52E0;
-float:center;
-text-align:center;
-justify-content: center;
-
-`;
-
-const Firsttext = styled.div`
-justify-content: center;
-margin:7px;
-font-family: Poppins, Sans-serif;
-font-size:24px;
-color: #ffffff;
-`;
-
-const Loginwith = styled.div`
-float:right;
-width:220px;
-margin-top:10px;
-font-family: Mukta Mahee, Sans-serif;
-font-style: normal;
-font-size:14px;
+  div.loginwith {
+    font-size:10px;
+    margin:10px;
+    color: #1B2121;
+    opacity:80%;
+  }
 `;
 
 
@@ -131,17 +63,10 @@ const LogBox = ({LoginPart, SignupPart, EmailPart, PasswordPart})=> {
           </Headerpart>
          
           <Logincontainer>
-          <Youremailbox>{EmailPart}</Youremailbox>
-          <Yourinput>johndoe@bcit.ca</Yourinput>
-          <Straightline></Straightline>
-          <Yourpassbox>{PasswordPart}</Yourpassbox>
-          <Yourpassinput>***************</Yourpassinput>
-          <Straightline></Straightline>
-          <Forgotpass>forgot password?</Forgotpass>
-          <Logbutton><Firsttext>Login</Firsttext></Logbutton>
-          <Loginwith>Or log in with</Loginwith>
-      
-
+            <Inputs label="Email" color="#2F52E0" />
+            <Inputs label="Password" color="#2F52E0"/> 
+            <Button text={"Sign In"} bgColor={"#2F52E0"}/>           
+            <div className="loginwith">or Login with</div>
           </Logincontainer>
         </Logboxcontainer>
     )
