@@ -5,7 +5,7 @@ import Inputs from '../../comps/Inputs';
 import Social from '../../comps/Social';
 
 const Logboxcontainer = styled.div`
-width: 100%;
+width: 100vw;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -35,11 +35,11 @@ opacity:50%;
 
 const Logincontainer = styled.div`
   width:75%;
+  height: 55vh;
   display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
-  border:1px solid black;
   background-color:#fff;
   padding:40px;
   border-radius:25px;
