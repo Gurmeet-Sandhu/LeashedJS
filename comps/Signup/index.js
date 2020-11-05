@@ -63,13 +63,13 @@ width:260px;
 margin-left:50px;
 `;
 
-const Yourpassinput = styled.div`
+const Youremailinput = styled.div`
 float:left;
 margin-left:-48px;
 margin-top:90px;
 `;
 
-const Yourpassbox = styled.div`
+const Youremailbox = styled.div`
 float:left;
 margin-left:50px;
 margin-top:50px;
@@ -79,7 +79,7 @@ font-size:20px;
 color:#FF715B;
 `;
 
-const Logbutton = styled.div`
+const Signbutton = styled.div`
 margin-top:75px;
 margin-left:40px;
 width:274px;
@@ -141,10 +141,10 @@ const SignupBox = ({LoginPart, SignupPart, UsernamePart, FullnamePart, YourEmail
           <Yourfullnamebox>{FullnamePart}</Yourfullnamebox>
           <Yournameinput>Emma Duffy</Yournameinput>
           <Straightline></Straightline>
-          <Yourpassbox>{YourEmail}</Yourpassbox>
-          <Yourpassinput>emmaduffy1001@gmail.com</Yourpassinput>
+          <Youremailbox>{YourEmail}</Youremailbox>
+          <Youremailinput>emmaduffy1001@gmail.com</Youremailinput>
           <Straightline></Straightline>
-          <Logbutton><Firsttext>Sign Up</Firsttext></Logbutton>
+          <Signbutton><Firsttext>Sign Up</Firsttext></Signbutton>
           
       
 
