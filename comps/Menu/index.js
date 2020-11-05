@@ -7,6 +7,7 @@ const MenuContainer = styled.div`
     border-radius: 0px 20px 20px 0px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: 'Poppins', sans-serif;
+    background-color: white;
 `;
 
 //Top Container Styles

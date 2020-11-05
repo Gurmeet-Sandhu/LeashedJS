@@ -30,7 +30,7 @@ const Hamburger = styled.div `
 
 const PageName = styled.div `
     display:inline-flex;
-    font-size:25pt;
+    font-size:40px;
     font-wight:700;
     align-text:center;
 `
@@ -43,14 +43,31 @@ const MenuWrapper = styled.div`
     transition:0.2s all ease;
 `;
 
-const TopPart= ({Pagename, TopHeight}) => {
+const DogName = styled.div`
+    font-size: 30px;
+`;
+
+
+const Status = styled.div`
+    font-size: 25px;
+    font-weight: lighter;
+`;
+
+const TopText = styled.div`
+`;
+
+const TopPart= ({Pagename, TopHeight, DName, Stat,}) => {
     const [expanded, setExpanded] = useState(false);
     return <TopPartWrapper style={{height:TopHeight}}>
         <Hamburger onClick={()=>{
             setExpanded(!expanded);
         }
         }><img src="Menu Icon.png"/></Hamburger>
-        <PageName>{Pagename}</PageName>
+            <TopText>
+                <PageName>{Pagename}</PageName>
+                <DogName>{DName}</DogName>
+                <Status>{Stat}</Status>
+            </TopText>
         <MenuWrapper openMenu={expanded}><MenuBox  
             Name1="Emma"
             Name2="Humprey"
