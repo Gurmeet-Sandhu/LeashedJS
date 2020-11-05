@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../../comps/Button';
-import Inputs from '../../comps/Inputs'
+import Inputs from '../../comps/Inputs';
+import Social from '../../comps/Social';
 
 const Logboxcontainer = styled.div`
 width: 100%;
@@ -67,6 +68,7 @@ const LogBox = ({LoginPart, SignupPart, EmailPart, PasswordPart})=> {
             <Inputs label="Password" color="#2F52E0"/> 
             <Button text={"Sign In"} bgColor={"#2F52E0"}/>           
             <div className="loginwith">or Login with</div>
+            <Social/>
           </Logincontainer>
         </Logboxcontainer>
     )

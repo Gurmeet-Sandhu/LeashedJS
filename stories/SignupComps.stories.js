@@ -4,7 +4,7 @@ import SignupBox from '../comps/Signup';
 
 
 export default {
-    title: 'Leashed/Signup Comps',
+    title: 'Login Signup/Signup Comps',
     };
 
     export const SignupSection = () => (

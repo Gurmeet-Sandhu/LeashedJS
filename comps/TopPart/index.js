@@ -14,7 +14,7 @@ const TopPartWrapper = styled.div`
     position:relative;
 `;
 
-const Hambergur = styled.div `
+const Hamburger = styled.div `
     width:9%;
     position:absolute;
     top:15px;
@@ -35,7 +35,7 @@ const PageName = styled.div `
 
 const TopPart= ({Pagename, TopHeight}) => {
     return <TopPartWrapper style={{height:TopHeight}}>
-        <Hambergur><img src="Menu Icon.png"/></Hambergur>
+        <Hamburger><img src="Menu Icon.png"/></Hamburger>
         <PageName>{Pagename}</PageName>
     </TopPartWrapper>
 }
