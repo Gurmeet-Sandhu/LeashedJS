@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ResourceSubH = styled.div`
-    width:150px;
+    max-width: fit-content;
+    margin: 10%;
     padding:10px;
     border:3px solid #000;
     border:${props=>props.Border ? props.Border : "5px solid #2F52E0"};
@@ -12,7 +13,7 @@ const ResourceSubH = styled.div`
     align-items:center;
 
     span {
-        font-size:15px;
+        font-size:20px;
     }
 `
 
