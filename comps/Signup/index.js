@@ -1,23 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../../comps/Button';
+import Inputs from '../../comps/Inputs';
+import Social from '../../comps/Social';
 
 const Logboxcontainer = styled.div`
-width: 330px;
-margin-left:8px;
+width: 100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+`;
+
+const Headerpart = styled.div`
+  width:80%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 `;
 
 const Logintext = styled.div`
-float:left;
-margin-top:-50px;
 font-family: Mukta Mahee, Sans-serif;
 font-style: ExtraBold;
 font-size:30px;
-color: rgba(27, 33, 33, 0.5);
+opacity:50%;
 `;
 
 const Signuptext = styled.div`
-float:right;
-margin-top:-50px;
 font-family: Mukta Mahee, Sans-serif;
 font-style: ExtraBold;
 font-size:30px;
@@ -94,36 +104,30 @@ justify-content: center;
 
 `;
 
-const Firsttext = styled.div`
-justify-content: center;
-margin:7px;
-font-family: Poppins, Sans-serif;
-font-size:24px;
-color: #ffffff;
+
 `;
 
-const Yourfullnamebox = styled.div`
-float:left;
-margin-left:50px;
-margin-top:50px;
-font-family: Poppins, Sans-serif;
-font-style: SemiBold;
-font-size:20px;
-color:#FF715B;
+const Logincontainer = styled.div`
+  width:75%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  border:1px solid black;
+  background-color:#fff;
+  padding:40px;
+  border-radius:25px;
+
+
+  div.loginwith {
+    font-size:10px;
+    margin:10px;
+    color: #1B2121;
+    opacity:80%;
+  }
 `;
 
-const Yournameinput = styled.div`
-float:left;
-margin-left:-135
-px;
 
-
-
-
-
-
-margin-top:90px;
-`;
 
 const SignupBox = ({LoginPart, SignupPart, UsernamePart, FullnamePart, YourEmail})=> {
 
@@ -135,6 +139,7 @@ const SignupBox = ({LoginPart, SignupPart, UsernamePart, FullnamePart, YourEmail
           </Headerpart>
          
           <Logincontainer>
+
           <Yourusernamebox>{UsernamePart}</Yourusernamebox>
           <Youruserinput>johndoe123@domain.com</Youruserinput>
           <Straightline></Straightline>
@@ -147,6 +152,13 @@ const SignupBox = ({LoginPart, SignupPart, UsernamePart, FullnamePart, YourEmail
           <Signbutton><Firsttext>Sign Up</Firsttext></Signbutton>
           
       
+
+            <Inputs label="Your Name" color="#FF715B"/>
+            <Inputs label="Your Full Name" color="#FF715B"/>
+            <Inputs label="Email" color="#FF715B" />
+            <Inputs label="Password" color="#FF715B"/> 
+            <Button text={"Sign Up"} bgColor={"#FF715B"}/> 
+
 
           </Logincontainer>
         </Logboxcontainer>
