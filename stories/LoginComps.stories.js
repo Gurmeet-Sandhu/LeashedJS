@@ -4,7 +4,7 @@ import LogBox from '../comps/Login';
 
 
 export default {
-    title: 'Leashed/Login Comps',
+    title: 'Login Signup/Login Comps',
     };
 
     export const LogSection = () => (
