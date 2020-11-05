@@ -21,27 +21,25 @@ const Headerpart = styled.div`
 `;
 
 const Logintext = styled.div`
-font-family: Mukta Mahee, Sans-serif;
-font-style: ExtraBold;
+font-weight: bold;
 font-size:30px;
 opacity:50%;
 `;
 
 const Signuptext = styled.div`
-font-family: Mukta Mahee, Sans-serif;
-font-style: ExtraBold;
+font-weight: bold;
 font-size:30px;
 `;
 
 
 
 const Logincontainer = styled.div`
+font-weight: bold;
   width:75%;
   display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
-  border:1px solid black;
   background-color:#fff;
   padding:40px;
   border-radius:25px;
@@ -67,7 +65,7 @@ const SignupBox = ({LoginPart, SignupPart})=> {
           </Headerpart>
          
           <Logincontainer>
-            <Inputs label="Your Name" color="#FF715B"/>
+            <Inputs label="Username" color="#FF715B"/>
             <Inputs label="Your Full Name" color="#FF715B"/>
             <Inputs label="Email" color="#FF715B" />
             <Inputs label="Password" color="#FF715B"/> 

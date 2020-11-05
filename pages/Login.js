@@ -1,8 +1,6 @@
 import React from 'react';
-import SignupBox from '../comps/Signup';
 import Signup from '../comps/SignupTitle';
 import LogBox from '../comps/Login';
-import Social from '../comps/Social';
 
 export default function Login() {
     return (
