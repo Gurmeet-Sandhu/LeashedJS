@@ -31,7 +31,7 @@ const Hamburger = styled.div `
 const PageName = styled.div `
     display:inline-flex;
     font-size:40px;
-    font-wight:700;
+    font-wight:bold;
     align-text:center;
 `
 
