@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
+import MenuBox from '../../comps/Menu';
 
 
 const TopPartWrapper = styled.div`
@@ -12,6 +13,7 @@ const TopPartWrapper = styled.div`
     border-radius:0 0 25px 25px;
     background-color:#F9CB40;
     position:relative;
+
 `;
 
 const Hamburger = styled.div `
@@ -33,11 +35,39 @@ const PageName = styled.div `
     align-text:center;
 `
 
+const MenuWrapper = styled.div`
+    position:absolute;
+    z-index:99;
+    left:${props=>props.openMenu ? "0px" : "-320px"};
+    top:0;
+    transition:0.2s all ease;
+`;
+
 const TopPart= ({Pagename, TopHeight}) => {
+    const [expanded, setExpanded] = useState(false);
     return <TopPartWrapper style={{height:TopHeight}}>
-        <Hamburger><img src="Menu Icon.png"/></Hamburger>
+        <Hamburger onClick={()=>{
+            setExpanded(!expanded);
+        }
+        }><img src="Menu Icon.png"/></Hamburger>
         <PageName>{Pagename}</PageName>
+        <MenuWrapper openMenu={expanded}><MenuBox  
+            Name1="Emma"
+            Name2="Humprey"
+            Menu1="Home"
+            Menu2="Training"
+            Menu3="Achievement"
+            Menu4="Resources"
+            Menu5="Team Discord"
+            Menu6="Contact Us"
+            Menu7="Policy"
+            onClick={()=>{
+            setExpanded(!expanded);
+        }
+        }/>
+        </MenuWrapper>
     </TopPartWrapper>
+    
 }
 
 TopPart.defaultProps = {
