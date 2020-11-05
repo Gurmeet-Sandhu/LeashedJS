@@ -31,8 +31,5 @@ const Social = () =>{
        </SocialBox>
 }
 
-Social.defaultProps={
-
-}
 
 export default Social;
