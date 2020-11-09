@@ -1,6 +1,7 @@
 import React from 'react';
 import Signup from '../comps/SignupTitle';
 import LogBox from '../comps/Login';
+import Stacked from '../comps/StackedLogo';
 
 export default function Login() {
     return (
@@ -17,9 +18,7 @@ export default function Login() {
               SignupPart="Signup"
           />
         </div>
-        <div className="Logo">
-          <img src="/Horizontal Logo.png"></img>
-        </div>
+        <Stacked/>
       </div>
     );
   }

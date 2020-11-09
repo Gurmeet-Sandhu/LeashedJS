@@ -10,6 +10,8 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items:center;
 }
 
 .Header {
@@ -22,11 +24,4 @@ body {
 
 .LoginSelection {
     width: 100vw;
-}
-
-.Logo {
-    margin: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
