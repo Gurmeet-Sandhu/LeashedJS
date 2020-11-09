@@ -3,6 +3,7 @@ import TopPart from '../comps/TopPart';
 import MemoryCard from '../comps/MemoryCard';
 import HomeTrainingCard from '../comps/HomeTrainingCard';
 import Subheading from '../comps/Subheading';
+import Resource from '../comps/Resource';
 
 export default function Home() {
     return (
@@ -61,7 +62,7 @@ export default function Home() {
             </div>
             <div className="Resourece-section">
                 <Subheading text="Resources"/>
-                
+                <Resource breed={"Welsh Corgi"}/>
             </div>
 
         </div>

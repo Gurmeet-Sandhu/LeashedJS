@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const SHContainer = styled.div`
     padding-left:20px;
     padding-top:20px;
+    padding-bottom:20px;
     width:100%;
     height:auto;
     font-weight:700;
