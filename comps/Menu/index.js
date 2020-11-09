@@ -1,20 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import Stacked from '../../comps/StackedLogo';
 
 const MenuContainer = styled.div`
-    width: 289px; 
-    height: 896px; 
+    width: 75vw; 
+    height: 100vh; 
     border-radius: 0px 20px 20px 0px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: 'Poppins', sans-serif;
     background-color: white;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 `;
 
 //Top Container Styles
 
 const TopContainer = styled.div`
-    width: 289px; 
-    height: 319px; 
+    width: 100%; 
     display: flex;
     border-radius: 0px 20px 0px 0px;
     background-color: #2F52E0;
@@ -22,43 +25,44 @@ const TopContainer = styled.div`
     flex-direction: column;
     justify-content: center; 
     align-items: center;
+    position:relative;
 `;
 
 const BackButton = styled.div`
     width: 50px; 
     height: 50px;
-    positon: relative; 
-    margin-right: 230px;
     cursor: pointer;
+    position:absolute;
+    top:20px;
+    left:15px;
 `;
 
 const Img = styled.img`
+    margin:20px 0px;
     width: 184px; 
     height: 184px;
     border-radius: 25px;
-    background: green;
 
 `;
 
 const NameBox = styled.div`
     font-size: 13px;
-    margin: -10px;
-    color: white;
+    color: #fff;
     display: flex; 
-    flex-direction: row;
     .Name1 {
         color:#F9CB40;
         
     }
     .Name2 {
-        color: #FF715B;
+        color:#FF715B;
     }
 `;
 
 const EditBox = styled.div`
     font-weight: lighter;
-    color: white;
+    color: #fff;
     cursor: pointer;
+    margin-bottom:10px;
 `;
 
 //Bottom Container Styles
@@ -68,14 +72,25 @@ const BottomContainer = styled.div`
     border-radius: 0px 20px 0px 0px;
     display: flex; 
     flex-direction: column;
+
+    .mainmenu {
+        margin-top:-60px;
+        margin-left:20px;
+        margin-bottom:40px;
+    }
+
+    .submenu {
+        margin-left:20px;
+    }
 `;
+
 
 const MenuCat = styled.div`
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
-    margin: 35px;
-    margin-top: 20px;
     cursor: pointer;
+    margin: 20px 0px;
+
 `;
 
 const SmallTxt = styled.div`
@@ -83,20 +98,17 @@ const SmallTxt = styled.div`
     font-family: 'Poppins', sans-serif;
     color: #1B2121;
     opacity: 0.8;
-    margin: 9px;
-    margin-left: 35px;
     cursor: pointer;
+    margin: 10px 0px;
 `;
 
-const Logo = styled.img`
-    width: 133px; 
-    height: 30px;
-    display: flex;
-    margin-top: 100px;
-    margin-left: 75px;
-    cursor: pointer;
-`;
 
+const LogoBox = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:10px;
+`
 
 
 const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7, onClick })=>{
@@ -112,17 +124,24 @@ const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7,
             <NameBox><h1 className="Name1">{Name1}</h1> <h1>&nbsp; &amp; &nbsp;</h1> <h1 className="Name2">{Name2}</h1></NameBox>
             <EditBox>Edit Profile</EditBox>
         </TopContainer>
+
         <BottomContainer> 
+            <div className="mainmenu">
             <MenuCat>{Menu1}</MenuCat>
             <MenuCat>{Menu2}</MenuCat>
             <MenuCat>{Menu3}</MenuCat>
             <MenuCat>{Menu4}</MenuCat>
+            </div>
+            <div className="submenu">
             <SmallTxt>{Menu5}</SmallTxt>
             <SmallTxt>{Menu6}</SmallTxt>
             <SmallTxt>{Menu7}</SmallTxt>
-            <Logo src="/Horizontal Logo.png">
-            </Logo>
+            </div>
         </BottomContainer>
+        
+        <LogoBox>
+            <Stacked/>
+        </LogoBox>
     </MenuContainer>
 )
 };
