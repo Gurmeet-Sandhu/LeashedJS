@@ -15,12 +15,12 @@ body {
     font-weight: bold;
 }
 
-.TrainingSection {
+.TrainingSection, .Recent-activity{
     display:flex;
     flex-direction: column;
 }
 
-.TrainingCards {
+.TrainingCards, .ActivityCards {
     display: flex; 
     flex-direction: row;
     overflow: auto;
