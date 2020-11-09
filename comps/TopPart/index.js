@@ -13,6 +13,8 @@ const TopPartWrapper = styled.div`
     border-radius:0 0 25px 25px;
     background-color:#F9CB40;
     position:relative;
+    -webkit-box-shadow: 0px 6px 17px 3px rgba(0,0,0,0.37); 
+    box-shadow: 0px 6px 17px 3px rgba(0,0,0,0.37);
 
 `;
 

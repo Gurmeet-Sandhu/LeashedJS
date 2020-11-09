@@ -9,7 +9,7 @@ export default function Home() {
         <div className="Background">
             <div className="TopBar">
                 <TopPart 
-                TopHeight="300px"
+                TopHeight="258px"
                 Pagename="HI, Emma!"
                 DName="Humprey"
                 Stat="wants to walk"
