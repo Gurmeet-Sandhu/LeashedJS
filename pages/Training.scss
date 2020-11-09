@@ -1,7 +1,14 @@
-.TrainingCard {
-}
-
 .TrainingContainer {
     width: 100vw;
     height: 100vh;
+
+    .TopBar{
+        margin-bottom:20px;
+    }
+}
+
+.TrainingCard {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
