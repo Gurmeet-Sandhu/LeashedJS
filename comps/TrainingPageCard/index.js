@@ -2,12 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Training from '../../pages/Training';
 
-const TrainingCardContainer = styled.div`
-
-`
 
 const TrainingCard = styled.div`
-    margin: 50px;
+    margin:10px;
     width: 338px;
     height: 164px;
     background: #2F52E0;
@@ -33,12 +30,10 @@ const Arrow = styled.div`
     margin-left: -10%;
 `
 const TrainingPageCard = ({title}) =>{
-    return <TrainingCardContainer>
-        <TrainingCard>
+    return <TrainingCard>
             <TrainingCardTitle>{title}</TrainingCardTitle>
             <Arrow><img src="TrainingArrow.png"></img></Arrow>
         </TrainingCard>
-    </TrainingCardContainer>
 }
 
 TrainingPageCard.defaultProps = {
