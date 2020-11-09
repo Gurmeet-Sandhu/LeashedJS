@@ -2,6 +2,7 @@ import React from 'react';
 import TopPart from '../comps/TopPart';
 import MemoryCard from '../comps/MemoryCard';
 import HomeTrainingCard from '../comps/HomeTrainingCard';
+import Subheading from '../comps/Subheading';
 
 export default function Home() {
     return (
@@ -15,7 +16,7 @@ export default function Home() {
                 />
             </div>
             <div className="TrainingSection">
-                <div className="Subtitles"><h3>Continue Training</h3></div>
+                <Subheading text="Continue Training"/>
                 <div className="TrainingCards">
                     <HomeTrainingCard 
                         title="Master The Dog Walk"
@@ -38,8 +39,10 @@ export default function Home() {
                         date="Yesterday"
                     />
                 </div>
-                <div className="Subtitles"><h3>Recent Activity</h3></div>
-                <div className="TrainingCards">
+            </div>
+            <div className="Recent-activity">
+                <Subheading text="Recent Activity"/>
+                <div className="ActivityCards">
                     <MemoryCard 
                         text="Master The Dog Walk "
                         date="Yesterday"
@@ -56,6 +59,11 @@ export default function Home() {
                     />
                 </div>
             </div>
+            <div className="Resourece-section">
+                <Subheading text="Resources"/>
+                
+            </div>
+
         </div>
     );
       

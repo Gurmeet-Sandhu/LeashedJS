@@ -7,7 +7,7 @@ const SHContainer = styled.div`
     width:100%;
     height:auto;
     font-weight:700;
-    font-size:20px;
+    font-size:22px;
     display:flex;
     align-text:left;
 
