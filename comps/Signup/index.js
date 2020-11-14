@@ -32,11 +32,6 @@ font-style: ExtraBold;
 font-size:30px;
 `;
 
-const Logincontainer = styled.div`
-font-weight: bold;
-font-size:30px;
-`;
-
 
 
 const Logincontainer = styled.div`
