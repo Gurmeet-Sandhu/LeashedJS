@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CardsContainer =styled.div`
-
+    padding: 20px;
 `
 
 const TrainingCardHome = styled.div`

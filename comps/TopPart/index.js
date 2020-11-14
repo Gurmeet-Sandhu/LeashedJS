@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
+import MenuBox from '../../comps/Menu';
 
 
 const TopPartWrapper = styled.div`
@@ -12,6 +13,9 @@ const TopPartWrapper = styled.div`
     border-radius:0 0 25px 25px;
     background-color:#F9CB40;
     position:relative;
+    -webkit-box-shadow: 0px 6px 17px 3px rgba(0,0,0,0.37); 
+    box-shadow: 0px 6px 17px 3px rgba(0,0,0,0.37);
+
 `;
 
 const Hamburger = styled.div `
@@ -28,16 +32,61 @@ const Hamburger = styled.div `
 
 const PageName = styled.div `
     display:inline-flex;
-    font-size:25pt;
-    font-wight:700;
+    font-size:40px;
+    font-wight:bold;
     align-text:center;
 `
 
-const TopPart= ({Pagename, TopHeight}) => {
+const MenuWrapper = styled.div`
+    position:absolute;
+    z-index:99;
+    left:${props=>props.openMenu ? "0px" : "-320px"};
+    top:0;
+    transition:0.2s all ease;
+`;
+
+const DogName = styled.div`
+    font-size: 30px;
+`;
+
+
+const Status = styled.div`
+    font-size: 25px;
+    font-weight: lighter;
+`;
+
+const TopText = styled.div`
+`;
+
+const TopPart= ({Pagename, TopHeight, DName, Stat,}) => {
+    const [expanded, setExpanded] = useState(false);
     return <TopPartWrapper style={{height:TopHeight}}>
-        <Hamburger><img src="Menu Icon.png"/></Hamburger>
-        <PageName>{Pagename}</PageName>
+        <Hamburger onClick={()=>{
+            setExpanded(!expanded);
+        }
+        }><img src="Menu Icon.png"/></Hamburger>
+            <TopText>
+                <PageName>{Pagename}</PageName>
+                <DogName>{DName}</DogName>
+                <Status>{Stat}</Status>
+            </TopText>
+        <MenuWrapper openMenu={expanded}><MenuBox  
+            Name1="Emma"
+            Name2="Humprey"
+            Menu1="Home"
+            Menu2="Training"
+            Menu3="Achievement"
+            Menu4="Resources"
+            Menu5="Team Discord"
+            Menu6="Contact Us"
+            Menu7="Policy"
+            onClick={()=>{
+            setExpanded(!expanded);
+        }
+        }/>
+        </MenuWrapper>
     </TopPartWrapper>
+    
 }
 
 TopPart.defaultProps = {

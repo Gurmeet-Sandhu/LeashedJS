@@ -22,23 +22,30 @@ const Headerpart = styled.div`
 const Logintext = styled.div`
 
 font-style: ExtraBold;
+font-weight: bold;
 font-size:30px;
 opacity:50%;
 `;
 
 const Signuptext = styled.div`
-
 font-style: ExtraBold;
 font-size:30px;
 `;
 
 const Logincontainer = styled.div`
+font-weight: bold;
+font-size:30px;
+`;
+
+
+
+const Logincontainer = styled.div`
+font-weight: bold;
   width:75%;
   display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
-  border:1px solid black;
   background-color:#fff;
   padding:40px;
   border-radius:25px;
@@ -59,20 +66,21 @@ const SignupBox = ({LoginPart, SignupPart})=> {
     return (
         <Logboxcontainer>
           <Headerpart>
-          <Logintext>{LoginPart}</Logintext>
-          <Signuptext>{SignupPart}</Signuptext>
+            <Logintext>{LoginPart}</Logintext>
+            <Signuptext>{SignupPart}</Signuptext>
           </Headerpart>
          
           <Logincontainer>
 
 
             <Inputs label="Your Name" color="#FF715B"/>
+            <Inputs label="Username" color="#FF715B"/>
             <Inputs label="Your Full Name" color="#FF715B"/>
             <Inputs label="Email" color="#FF715B" />
             <Inputs label="Password" color="#FF715B"/> 
             <Button text={"Sign Up"} bgColor={"#FF715B"}/> 
-
-
+            <div className="loginwith">or Login With</div>
+            <Social/>
           </Logincontainer>
         </Logboxcontainer>
     )

@@ -6,6 +6,7 @@ const SignupContainer = styled.div`
 `;
 
 const SignupTitle = styled.div`
+    font-weight: bold;
     font-size: 50px;
     color: #2F52E0;
 `

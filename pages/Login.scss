@@ -1,0 +1,27 @@
+body {
+    margin:0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.LoginContainer {
+    background-color: #F9CB40;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.Header {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginSelection {
+    width: 100vw;
+}
