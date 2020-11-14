@@ -21,11 +21,14 @@ const Headerpart = styled.div`
 `;
 
 const Logintext = styled.div`
+
+font-style: ExtraBold;
 font-weight:bold;
 font-size:30px;
 `;
 
 const Signuptext = styled.div`
+font-style: ExtraBold;
 font-weight:bold;
 font-size:30px;
 opacity:50%;
