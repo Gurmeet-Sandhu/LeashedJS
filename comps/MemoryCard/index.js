@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 
 const MemoryCardContainer = styled.div`
-    padding: 20px;
+    padding: 18px;
     width:100px;
+    min-width:100px;
     height:100px;
     border: 5px solid #F9CB40;
     border-radius:20px;
@@ -13,14 +14,16 @@ const MemoryCardContainer = styled.div`
     align-items:center;
     flex-direction:column;
     text-align:center;
+    margin:0 10px;
+
 `
 
 const MemoryTitle = styled.div`
     display:flex;
     align-items:center;
-    font-size:16pt;
+    font-size:14pt;
     margin:10px;
-    flex:4;
+    flex:3;
 `;
 
 const MemoryDate = styled.div`
