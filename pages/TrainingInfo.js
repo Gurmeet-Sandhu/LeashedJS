@@ -14,7 +14,6 @@ export default function TrainingInfo() {
                     TopHeight="258px"
                     Pagename="Master The Dog Walk"
                     Stat="Day 1"
-
                     icon={"/arrow_b_l.png"}
                     onClick={()=>{
                         router.push('/Training2')
