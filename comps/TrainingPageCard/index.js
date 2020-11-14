@@ -13,6 +13,7 @@ const TrainingCard = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `
 
 const TrainingCardTitle = styled.div`
@@ -20,7 +21,7 @@ const TrainingCardTitle = styled.div`
     font-size:28px;
     font-weight:bold;
     max-width:190px;
-    margin-right:100px;
+    margin-right:70px;
     margin-bottom:30px;
 `
 
@@ -37,7 +38,7 @@ const TrainingPageCard = ({title}) =>{
 }
 
 TrainingPageCard.defaultProps = {
-    title:"Deafult Title Goes Here",
+    title:"Default Title Goes Here",
 }
 
 export default TrainingPageCard;
