@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TopPart from '../comps/TopPart';
 import Paragraphs from '../comps/Paragraphs';
 import TipBox from '../comps/Tips';
 import Button from '../comps/Button';
+import {useRouter} from 'next/router';
 
 export default function TrainingInfo() {
+    const router = useRouter()
     return (
         <div className="Background">
         <div className="TopBar">
@@ -12,6 +14,10 @@ export default function TrainingInfo() {
                     TopHeight="258px"
                     Pagename="Master The Dog Walk"
                     Stat="Day 1"
+                    icon={"/arrow_b_l.png"}
+                    onClick={()=>{
+                        router.push('/Training2')
+                    }}
                     />
         </div>
         <div className="InfoSection">
