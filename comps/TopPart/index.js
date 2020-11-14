@@ -26,13 +26,14 @@ const Hamburger = styled.div `
 
     img {
         width:100%;
+        max-width:30px;
         height:auto;
     }
 `
 
 const PageName = styled.div `
     display:inline-flex;
-    font-size:40px;
+    font-size:40px;npm
     font-wight:bold;
     align-text:center;
 `
