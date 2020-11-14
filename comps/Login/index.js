@@ -21,13 +21,13 @@ const Headerpart = styled.div`
 `;
 
 const Logintext = styled.div`
-font-family: Mukta Mahee, Sans-serif;
+
 font-style: ExtraBold;
 font-size:30px;
 `;
 
 const Signuptext = styled.div`
-font-family: Mukta Mahee, Sans-serif;
+
 font-style: ExtraBold;
 font-size:30px;
 opacity:50%;

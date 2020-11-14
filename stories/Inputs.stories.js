@@ -13,3 +13,6 @@ export const FullNameInput = () => <Inputs label="Your Full Name" color="#FF715B
 export const SignupEmailInput = () => <Inputs label="Email" color="#FF715B"></Inputs>;
 export const LoginEmailInput = () => <Inputs label="Email" color="#2F52E0"></Inputs>;
 export const PasswordInput = () => <Inputs label="Password" color="#2F52E0"></Inputs>;
+export const DognameInput = () => <Inputs label="Dog Name" color="#000000"></Inputs>;
+export const DogBirthday = () => <Inputs label="Dog Birthday" color="#000000"></Inputs>;
+export const DogWeight = () => <Inputs label="Weight" color="#000000"></Inputs>;
