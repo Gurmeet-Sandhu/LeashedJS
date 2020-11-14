@@ -25,7 +25,7 @@ const Hamburger = styled.div `
     left:15px;
 
     img {
-        width:100%;
+        width:auto%;
         max-width:30px;
         height:auto;
     }
@@ -59,19 +59,18 @@ const Status = styled.div`
 const TopText = styled.div`
 `;
 
-const TopPart= ({Pagename, TopHeight, DName, Stat,}) => {
-    const [expanded, setExpanded] = useState(false);
+const TopPart= ({Pagename, TopHeight, DName, Stat, icon, onClick, onReturn, openMenu}) => {
     return <TopPartWrapper style={{height:TopHeight}}>
-        <Hamburger onClick={()=>{
-            setExpanded(!expanded);
-        }
-        }><img src="Menu Icon.png"/></Hamburger>
+        <Hamburger onClick={onClick}>
+            <img src={icon}/>
+            </Hamburger>
             <TopText>
                 <PageName>{Pagename}</PageName>
                 <DogName>{DName}</DogName>
                 <Status>{Stat}</Status>
             </TopText>
-        <MenuWrapper openMenu={expanded}><MenuBox  
+        <MenuWrapper openMenu={openMenu}>
+            <MenuBox  
             Name1="Emma"
             Name2="Humprey"
             Menu1="Home"
@@ -79,12 +78,9 @@ const TopPart= ({Pagename, TopHeight, DName, Stat,}) => {
             Menu3="Achievement"
             Menu4="Resources"
             Menu5="Team Discord"
-            Menu6="Contact Us"
+            Menu6="Contact Us"    
             Menu7="Policy"
-            onClick={()=>{
-            setExpanded(!expanded);
-        }
-        }/>
+            onClick={onReturn}/>
         </MenuWrapper>
     </TopPartWrapper>
     
@@ -92,7 +88,8 @@ const TopPart= ({Pagename, TopHeight, DName, Stat,}) => {
 
 TopPart.defaultProps = {
     Pagename : "default",
-    TopHeight: "120px"
+    TopHeight: "130px",
+    icon: "/Menu Icon.png"
 }
 
 

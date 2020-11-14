@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TopPart from '../comps/TopPart';
 import MemoryCard from '../comps/MemoryCard';
 import HomeTrainingCard from '../comps/HomeTrainingCard';
@@ -9,11 +9,18 @@ import {useRouter} from 'next/router';
 
 export default function Home() {
     const router = useRouter()
-
+    const [expanded, setExpanded] = useState(false);
     return (
         <div className="Background">
             <div className="TopBar">
                 <TopPart 
+                openMenu={expanded}
+                onClick={()=>{
+                    setExpanded(!expanded)
+                }}
+                onReturn={()=>{
+                    setExpanded(!expanded)
+                }}
                 TopHeight="258px"
                 Pagename="HI, Emma!"
                 DName="Humprey"

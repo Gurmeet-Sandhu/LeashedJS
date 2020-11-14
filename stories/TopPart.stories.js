@@ -8,3 +8,4 @@ export default {
 
 export const BasicTop = () => <TopPart />
 export const HomeTop = () => <TopPart TopHeight={"200px"} /> //for Home and Traning Pages
+export const SecondaryTop = () => <TopPart icon={"/arrow_b_l.png"} />
