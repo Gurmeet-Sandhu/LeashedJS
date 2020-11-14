@@ -101,11 +101,8 @@ background-color: #FF715B;
 float:center;
 text-align:center;
 justify-content: center;
-
 `;
 
-
-`;
 
 const Logincontainer = styled.div`
   width:75%;
