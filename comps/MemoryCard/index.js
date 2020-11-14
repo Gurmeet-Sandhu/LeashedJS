@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-    padding: 20px;
-    padding-right: 5px;
-`;
 
 const MemoryCardContainer = styled.div`
-    width:135px;
-    height:135px;
+    padding: 20px;
+    width:100px;
+    height:100px;
     border: 5px solid #F9CB40;
     border-radius:20px;
     display:flex;
@@ -34,12 +31,10 @@ const MemoryDate = styled.div`
 
 
 const MemoryCard = ({text,date,border}) =>{
-    return <Container>
-        <MemoryCardContainer style={{border:border}}>
+    return <MemoryCardContainer style={{border:border}}>
             <MemoryTitle>{text}</MemoryTitle>
             <MemoryDate>{date}</MemoryDate>
         </MemoryCardContainer>
-    </Container>
 }
 
 MemoryCard.defaultProps = {

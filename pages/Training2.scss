@@ -1,0 +1,22 @@
+.DaysSection {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.DayCards {
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.FinalDay {
+    justify-content: center;
+    align-content: center;
+}
