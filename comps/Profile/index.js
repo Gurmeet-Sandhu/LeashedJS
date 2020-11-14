@@ -1,177 +1,69 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../../comps/Button';
+import Inputs from '../../comps/Inputs';
 
 const Createprofboxcontainer = styled.div`
-width: 330px;
-margin-left:8px;
-`;
+width: 100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;`;
 
 const Createproftext = styled.div`
-float:left;
-margin-top:-50px;
-margin-left:50px;
-font-family: Mukta Mahee, Sans-serif;
 font-style: ExtraBold;
 font-size:30px;
+display:flex;
+justify-content:center;
+align-items:center;
 `;
 
 const Logincontainer = styled.div`
-width:362px;
-height: 505px;
-background: #ffffff;
-border: 1px solid #E5E5E5;
-box-sizing: border-box;
-border-radius: 40px;
+width:75%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+border:1px solid black;
+background-color:#fff;
+padding:40px;
+border-radius:25px;
+
+
+div.loginwith {
+  font-size:10px;
+  margin:10px;
+  color: #1B2121;
+  opacity:80%;
+}
 `;
 
 const Headerpart = styled.div`
-width:300x;
-margin-left:40px;
-margin-bottom: 40px;
+  width:100%;
+  display:flex;
+justify-content:center;
+align-items:center;
 `;
 
-const Dogsnamebox = styled.div`
-float:left;
-margin-left:50px;
-margin-top:50px;
-font-family: Poppins, Sans-serif;
-font-style: SemiBold;
-font-size:20px;
-color:#FF715B;
+const Sidetoside = styled.div`
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
 `;
 
-const Dogsuserinput = styled.div`
-float:left;
-margin-left:-97px;
-margin-top:90px;
+const Birthdaysize = styled.div`
+input {
+  width:140px;
+}
 `;
 
-const Straightline = styled.div`
-margin-top:109px;
-text-align:center;
-justify-contents: center;
-border-top: 1px solid black;
-width:260px;
-margin-left:50px;
+const Weightsize = styled.div`
+margin-left:10px;
+input {
+  width:110px;
+}
 `;
-
-const Doguserinput = styled.div`
-float:left;
-margin-left:-95px;
-margin-top:90px;
-`;
-
-const Dognamebox = styled.div`
-float:left;
-margin-left:50px;
-margin-top:50px;
-font-family: Poppins, Sans-serif;
-font-style: SemiBold;
-font-size:20px;
-color:#1B2121;
-`;
-
-const Createbutton = styled.div`
-margin-top:175px;
-margin-left:40px;
-width:274px;
-height: 45px;
-border-radius: 193px;
-border: 1px solid #F9CB40;
-fill: solid;
-background-color: #F9CB40;
-float:center;
-text-align:center;
-justify-content: center;
-
-`;
-
-const Firsttext = styled.div`
-justify-content: center;
-margin:7px;
-font-family: Poppins, Sans-serif;
-font-size:24px;
-color: #ffffff;
-`;
-
-const Birthdaynamebox = styled.div`
-float:left;
-margin-left:50px;
-margin-top:50px;
-font-family: Poppins, Sans-serif;
-font-style: SemiBold;
-font-size:20px;
-color:#1B2121;
-`;
-
-const Birthdayinput = styled.div`
-float:left;
-margin-left:-115px;
-margin-top:90px;
-`;
-
-const Weightbox = styled.div`
-float:left;
-margin-left:50px;
-margin-top:50px;
-font-family: Poppins, Sans-serif;
-font-style: SemiBold;
-font-size:20px;
-color:#1B2121;
-`;
-
-const Yourweightinput = styled.div`
-float:left;
-margin-left:-60px;
-margin-top:90px;
-`;
-
-const Straightlineright = styled.div`
-margin-top:109px;
-text-align:center;
-justify-contents: center;
-border-top: 1px solid black;
-width:95px;
-margin-left:215px;`;
-
-const Straightlineleft = styled.div`
-margin-top:110px;
-text-align:center;
-justify-contents: center;
-border-top: 1px solid black;
-width:130px;
-margin-left:50px;`;
-
-const Sidebar = styled.div`
-margin-left:150px;
-margin-top:-110px;
-`;
-const Bold = styled.div`
-margin-top:-38px;
-margin-left:25px;
-`;
-
-
-const Doggenderbox = styled.div`
-float:left;
-margin-left:50px;
-margin-top:30px;
-font-family: Poppins, Sans-serif;
-font-style: SemiBold;
-font-size:20px;
-color:#1B2121;
-`;
-
-const Dogbreedbox = styled.div`
-float:left;
-margin-left:-65px;
-margin-top:90px;
-font-family: Poppins, Sans-serif;
-font-style: SemiBold;
-font-size:20px;
-color:#1B2121;
-`;
-
 const Createprofbox = ({})=> {
 
     return (
@@ -181,31 +73,18 @@ const Createprofbox = ({})=> {
           </Headerpart>
          
           <Logincontainer>
-          <Dognamebox>Dog Name</Dognamebox>
-          <Doguserinput>Humphrey</Doguserinput>
-          <Straightline></Straightline>
 
-          <Birthdaynamebox>Dog Birthday</Birthdaynamebox>
-          <Birthdayinput>DD/MM/YYYY</Birthdayinput>
-          <Straightlineleft></Straightlineleft>
-
-          <Sidebar>
-          <Weightbox>Weight</Weightbox>
-          <Yourweightinput>6.5<Bold><h5>kg</h5></Bold></Yourweightinput>
-          </Sidebar>
-          <Straightlineright></Straightlineright>
-          <Doggenderbox>Gender</Doggenderbox>
-          <Dogbreedbox>Breed</Dogbreedbox>
-          
-          
-          
-          
-          
-          
-
-          <Createbutton><Firsttext>Create</Firsttext></Createbutton>
-          
-      
+            <Inputs label="Dog Name" color="#000000"/>
+            <Sidetoside>
+            <Birthdaysize>
+            <Inputs label="Dog Birthday" color="#000000"/>
+            </Birthdaysize>
+            <Weightsize>
+            <Inputs label="Weight" color="#000000" /> 
+            </Weightsize>
+            
+            </Sidetoside>
+            <Button text={"Create"} bgColor={"#F9CB40"}/>
 
           </Logincontainer>
         </Createprofboxcontainer>
