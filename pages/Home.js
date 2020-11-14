@@ -4,8 +4,12 @@ import MemoryCard from '../comps/MemoryCard';
 import HomeTrainingCard from '../comps/HomeTrainingCard';
 import Subheading from '../comps/Subheading';
 import Resource from '../comps/Resource';
+import {useRouter} from 'next/router';
+
 
 export default function Home() {
+    const router = useRouter()
+
     return (
         <div className="Background">
             <div className="TopBar">
@@ -16,7 +20,7 @@ export default function Home() {
                 Stat="wants to walk"
                 />
             </div>
-            <div className="TrainingSection">
+            <div className="TrainingSection" onClick={() => router.push('/Training')}>
                 <Subheading text="Continue Training"/>
                 <div className="TrainingCards">
                     <HomeTrainingCard 
@@ -41,7 +45,9 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <div className="Recent-activity">
+            <div className="Recent-activity" 
+            //onClick={() => router.push('/acievement')}
+            >
                 <Subheading text="Recent Activity"/>
                 <div className="ActivityCards">
                     <MemoryCard 
@@ -60,7 +66,7 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <div className="Resourece-section">
+            <div className="Resourece-section" onClick={() => router.push('/Resources')}>
                 <Subheading text="Resources"/>
                 <Resource breed={"Welsh Corgi"}/>
             </div>

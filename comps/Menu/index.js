@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import Stacked from '../../comps/StackedLogo';
 
 const MenuContainer = styled.div`
-    width: 75vw; 
+    width:300px;
+    max-width:500px; 
     height: 100vh; 
     border-radius: 0px 20px 20px 0px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
