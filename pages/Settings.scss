@@ -1,0 +1,29 @@
+.SettingsSection {
+    width: 100vw;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.DogSettings {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.DualInput {
+    overflow: hidden;
+    width: 100vw;
+    display:flex;
+    font-family: 'Poppins', sans-serif;
+}
+
+.SingleInput {
+    margin: 5%;
+}
