@@ -8,7 +8,9 @@ width: 100%;
 display:flex;
 justify-content:center;
 align-items:center;
-flex-direction:column;`;
+flex-direction:column;
+border: none;
+`;
 
 const Createproftext = styled.div`
 font-style: ExtraBold;
@@ -24,7 +26,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-border:1px solid black;
+border: none;
 background-color:#fff;
 padding:40px;
 border-radius:25px;

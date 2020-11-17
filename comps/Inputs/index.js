@@ -13,7 +13,6 @@ const Label = styled.div`
     font-size: 20px;
     text-align: left;
     margin-bottom:10px;
-
 `
 
 const Inputs = ({label,color}) =>{
