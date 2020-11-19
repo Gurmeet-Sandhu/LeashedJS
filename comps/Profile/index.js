@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../../comps/Button';
 import Inputs from '../../comps/Inputs';
+import Drop from '../comps/Dropdown';
 
 const Createprofboxcontainer = styled.div`
 width: 100%;
@@ -82,11 +83,13 @@ const Createprofbox = ({})=> {
             <Inputs label="Dog Birthday" color="#000000"/>
             </Birthdaysize>
             <Weightsize>
-            <Inputs label="Weight" color="#000000" /> 
+            <Inputs label="Weight (kg)" color="#000000" /> 
             </Weightsize>
             
             </Sidetoside>
+            <Drop text={"Dog Breed"} bgColor={"#F9cb40"}/>
             <Button text={"Create"} bgColor={"#F9CB40"}/>
+            
 
           </Logincontainer>
         </Createprofboxcontainer>
