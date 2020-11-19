@@ -1,18 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TopPart from '../comps/TopPart';
 import Inputs from '../comps/Inputs';
 import Drop from '../comps/Dropdown';
 import Button2 from '../comps/Button2';
+import {useRouter} from 'next/router';
 
 
 export default function Settings() {
+    const router = useRouter();
+    const [expanded, setExpanded] = useState(false);
     return (
      <div className="Background">
-                <div className="TopBar">
-                    <TopPart 
-                        Pagename="Settings"
-                    />
-                </div>
+         <div className="TopBar">
+          <TopPart 
+           Pagename ="Settings"
+           openMenu={expanded}
+                onClick={()=>{
+                    setExpanded(!expanded)
+                }}
+                onReturn={()=>{
+                    setExpanded(!expanded)
+                }}
+          />
+        </div>
                 <div className="SettingsSection">
                     <div className="ProfileImage">
 

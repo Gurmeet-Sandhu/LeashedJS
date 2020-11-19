@@ -9,7 +9,6 @@ const DropDown = styled.div`
 
 const TopTitle = styled.div`
     color: black;
-    font-weight: bold;
     font-size: 20px;
     text-align: left;
     margin-bottom:10px;

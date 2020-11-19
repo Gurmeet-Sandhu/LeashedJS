@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import Stacked from '../../comps/StackedLogo';
+import Link from 'next/link';
 
 const MenuContainer = styled.div`
     width:300px;
@@ -59,7 +60,7 @@ const NameBox = styled.div`
     }
 `;
 
-const EditBox = styled.div`
+const EditBox = styled.a`
     font-weight: lighter;
     color: #fff;
     cursor: pointer;
@@ -75,9 +76,9 @@ const BottomContainer = styled.div`
     flex-direction: column;
 
     .mainmenu {
-        margin-top:-60px;
         margin-left:20px;
-        margin-bottom:40px;
+        display:flex;
+        flex-direction:column;
     }
 
     .submenu {
@@ -86,7 +87,7 @@ const BottomContainer = styled.div`
 `;
 
 
-const MenuCat = styled.div`
+const MenuCat = styled.a`
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
@@ -123,15 +124,15 @@ const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7,
             <Img src="/img-placeholder.png" width="100%" height="100%">
             </Img>
             <NameBox><h1 className="Name1">{Name1}</h1> <h1>&nbsp; &amp; &nbsp;</h1> <h1 className="Name2">{Name2}</h1></NameBox>
-            <EditBox>Edit Profile</EditBox>
+            <Link href="/Settings"><EditBox>Edit Profile</EditBox></Link>
         </TopContainer>
 
         <BottomContainer> 
             <div className="mainmenu">
-            <MenuCat>{Menu1}</MenuCat>
-            <MenuCat>{Menu2}</MenuCat>
-            <MenuCat>{Menu3}</MenuCat>
-            <MenuCat>{Menu4}</MenuCat>
+            <Link href="/Home"><MenuCat>{Menu1}</MenuCat></Link>
+            <Link href="/Training"><MenuCat>{Menu2}</MenuCat></Link>
+            <Link href="#"><MenuCat>{Menu3}</MenuCat></Link>
+            <Link href="Resources"><MenuCat>{Menu4}</MenuCat></Link>
             </div>
             <div className="submenu">
             <SmallTxt>{Menu5}</SmallTxt>
