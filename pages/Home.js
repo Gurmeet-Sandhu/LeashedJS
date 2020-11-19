@@ -53,7 +53,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="Recent-activity" 
-            //onClick={() => router.push('/acievement')}
+
             >
                 <Subheading text="Recent Activity"/>
                 <div className="ActivityCards">
