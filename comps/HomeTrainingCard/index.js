@@ -32,7 +32,7 @@ const TrainingCardHomeDayText = styled.div`
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    margin-left:20px;
+    margin-left:15px;
     min-width:50px;
 `
 
@@ -42,7 +42,7 @@ const TrainingCardHomeYesterdayText = styled.div`
     font-weight: 400;
     color: #F9CB40;
     margin-top:110px;
-    margin-left:-60px;
+    margin-left:-70px;
 `
 
 const HomeTrainingCard = ({title, day, date}) =>{
@@ -51,7 +51,7 @@ const HomeTrainingCard = ({title, day, date}) =>{
             <TrainingCardHomeBox >
                 <TrainingCardHomeTitle>{title}</TrainingCardHomeTitle>
                 <TrainingCardHomeDayText>{day}</TrainingCardHomeDayText>
-                    <TrainingCardHomeYesterdayText>{date}</TrainingCardHomeYesterdayText>
+                <TrainingCardHomeYesterdayText>{date}</TrainingCardHomeYesterdayText>
             </TrainingCardHomeBox>
         </TrainingCardHome>
     </CardsContainer>

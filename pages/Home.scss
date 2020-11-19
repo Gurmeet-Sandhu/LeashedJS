@@ -2,13 +2,16 @@ body {
     padding:0px;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .Background {
     width: 100%;
+    min-width:100%;
+    max-width:412px;
     height: 100%;
+    min-height:100vh;
     overflow: auto;
+    background-color:#fff;
 }
 
 .TopBar {
@@ -18,9 +21,11 @@ body {
 .TrainingSection, .Recent-activity {
     display:flex;
     flex-direction: column;
+
 }
 
 .TrainingCards {
+    margin-left:10px;
     display: flex; 
     flex-direction: row;
     overflow: auto;

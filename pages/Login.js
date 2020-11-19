@@ -18,7 +18,9 @@ export default function Login() {
               SignupPart="Signup"
           />
         </div>
+        <div className="stackedlogo">
         <Stacked/>
+        </div>
       </div>
     );
   }

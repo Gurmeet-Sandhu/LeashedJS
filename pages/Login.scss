@@ -7,21 +7,25 @@ body {
 .LoginContainer {
     background-color: #F9CB40;
     width: 100vw;
-    height: 100vh;
+    height:100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items:center;
 }
 
 .Header {
-    width: 100vw;
-    height: 20vh;
+    width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex:1;
 }
 
-.LoginSelection {
-    width: 100vw;
+.LoginSection{
+    flex:3.5;
+}
+
+.stackedlogo{
+    margin-bottom:10px;
 }

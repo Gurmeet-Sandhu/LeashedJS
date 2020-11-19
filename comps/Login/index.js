@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import Button from '../../comps/Button';
 import Inputs from '../../comps/Inputs';
 import Social from '../../comps/Social';
+import Link from 'next/link';
 
 const Logboxcontainer = styled.div`
-width: 100vw;
+width: 100%;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -18,6 +19,7 @@ const Headerpart = styled.div`
   display:flex;
   justify-content:space-between;
   align-items:center;
+  margin:10px;
 `;
 
 const Logintext = styled.div`
@@ -36,7 +38,7 @@ opacity:50%;
 
 const Logincontainer = styled.div`
   width:75%;
-  height: 55vh;
+  height: 50%;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -60,8 +62,8 @@ const LogBox = ({LoginPart, SignupPart, EmailPart, PasswordPart})=> {
     return (
         <Logboxcontainer>
           <Headerpart>
-          <Logintext>{LoginPart}</Logintext>
-          <Signuptext>{SignupPart}</Signuptext>
+          <Link href="Login"><Logintext>{LoginPart}</Logintext></Link>
+          <Link href="SignUp"><Signuptext>{SignupPart}</Signuptext></Link>
           </Headerpart>
          
           <Logincontainer>

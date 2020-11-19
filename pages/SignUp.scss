@@ -10,11 +10,22 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
-.LoginSection {
-    font-family: 'Poppins', sans-serif;
+.Header {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
 }
-// font-family: Mukta Mahee, Sans-serif;
+
+.SignupSection {
+    flex:3.5;
+}
+
+.stackedlogo{
+    margin-bottom:10px;
+}
