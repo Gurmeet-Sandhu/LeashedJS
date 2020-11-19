@@ -52,9 +52,7 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <div className="Recent-activity" 
-
-            >
+            <div className="Recent-activity"  >
                 <Subheading text="Recent Activity"/>
                 <div className="ActivityCards">
                     <MemoryCard 
