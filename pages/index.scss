@@ -1,0 +1,29 @@
+.main {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+    background-color:#F9CB40;
+}
+@keyframes lotate {
+    from {transform:rotate(0deg); }
+    to {transform: rotate(360deg);}
+}
+
+.center_content {
+    animation: lotate 2s infinite;
+    animation-timing-function: ease-in-out;
+
+}
+@keyframes logocolor {
+    50% {filter: invert(58%) sepia(72%) saturate(2337%) hue-rotate(324deg) brightness(104%) contrast(101%);}
+    100% {filter: invert(22%) sepia(79%) saturate(2704%) hue-rotate(223deg) brightness(96%) contrast(87%);}
+}
+
+.logo {
+    
+    animation: logocolor 1s infinite;
+    animation-timing-function: steps(1, start);
+    filter: invert(58%) sepia(72%) saturate(2337%) hue-rotate(324deg) brightness(104%) contrast(101%);
+}
