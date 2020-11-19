@@ -6,8 +6,15 @@ import {useRouter} from 'next/router';
 export default function Loading() {
   const router = useRouter();
   useEffect(() => {
-    router.push("/Home")
+    setTimeout(() =>{
+ 
+    router.push('/Home')
+ 
+ }, 2000)
+ 
  }, [])
+
+ 
   return (
 
     <div className="main">
