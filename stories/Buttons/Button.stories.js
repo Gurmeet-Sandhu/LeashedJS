@@ -7,7 +7,7 @@ export default {
 };
 
 export const BasicButton = () => <Button />
-export const SignUpBtn = () => <Button text={"Sign Up"} bgColor={"#FF715B"}/>
+export const SignUpBtn = () => <Button text={"Sign Up"} bgColor={"#FF715B"} borderColor={"#FF715B"}/>
 export const CreateBtn = () => <Button text={"Create"} bgColor={"#F9CB40"}/>
 export const SignInBtn = () => <Button text={"Sign In"} bgColor={"#2F52E0"}/>
 
