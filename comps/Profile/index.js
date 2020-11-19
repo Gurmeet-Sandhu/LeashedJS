@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../../comps/Button';
 import Inputs from '../../comps/Inputs';
-import Drop from '../comps/Dropdown';
+import Drop from '../../comps/Dropdown';
 
 const Createprofboxcontainer = styled.div`
 width: 100%;
@@ -67,6 +67,23 @@ input {
   width:110px;
 }
 `;
+
+const Label = styled.div`
+font-size: 20px;
+text-align: left;
+margin-bottom:10px;
+margin-right:auto;
+margin-left:auto;
+
+`;
+
+const Space1 = styled.div`
+margin:5px;
+`;
+
+const Space = styled.div`
+margin:15px;
+`;
 const Createprofbox = ({})=> {
 
     return (
@@ -87,7 +104,23 @@ const Createprofbox = ({})=> {
             </Weightsize>
             
             </Sidetoside>
-            <Drop text={"Dog Breed"} bgColor={"#F9cb40"}/>
+            
+            <Drop 
+            Title={"Gender"} 
+            Input0={""} 
+            Input1={"Male"} 
+            Input2={"Male Neutered"}
+            Input3={"Female"} 
+            Input4={"Female Spayed"}
+            color={"#F9CB40"}/>
+            <Space1></Space1>
+            <Drop Title={"Dog Breed"}
+            Input0={""} 
+            Input1={"Labrador Retriever"} 
+            Input2={"German Shepherd"}
+            Input3={"French Bulldog"} 
+             color={"#F9CB40"}/>
+            <Space></Space>
             <Button text={"Create"} bgColor={"#F9CB40"}/>
             
 
