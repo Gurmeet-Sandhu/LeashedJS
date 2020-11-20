@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import Button from '../../comps/Button';
 import Inputs from '../../comps/Inputs';
@@ -49,7 +49,10 @@ const Logincontainer = styled.div`
 
 
 const SignupBox = ({LoginPart, SignupPart})=> {
-
+  const [disabled, setDisabled] = useState(false);
+  useEffect(()=>{
+      setDisabled(false);
+  },[])
     return (
         <Logboxcontainer>
           <Headerpart>
@@ -58,12 +61,28 @@ const SignupBox = ({LoginPart, SignupPart})=> {
           </Headerpart>
          
           <Logincontainer>
-            <Inputs label="Your Name" color="#FF715B"/>
-            <Inputs label="Username" color="#FF715B"/>
-            <Inputs label="Your Full Name" color="#FF715B"/>
-            <Inputs label="Email" color="#FF715B" />
-            <Inputs label="Password" color="#FF715B"/> 
-            <Button text={"Sign Up"} bgColor={"#FF715B"}/> 
+            <Inputs label="Your Name" color="#FF715B" onChange={(e)=>{
+                  var input_yourname = e.target.value.length;
+              if (input_yourname === 0)  setDisabled(false) 
+              console.log(input_yourname)
+            }}/>
+            <Inputs label="Username" color="#FF715B" onChange={(e)=>{
+                  var input_useranme = e.target.value.length;
+              if (input_useranme === 0)  setDisabled(false) 
+              console.log(input_useranme)
+            }}/>
+            <Inputs label="Email" color="#FF715B" onChange={(e)=>{
+                  var input_email = e.target.value.length;
+              if (input_email === 0)  setDisabled(false) 
+              console.log(input_email)
+            }} />
+            <Inputs label="Password" color="#FF715B" onChange={(f)=>{
+                  var input_pswd = f.target.value.length;
+              if (input_pswd === 0)  setDisabled(false)
+              else setDisabled(true)
+              console.log(input_pswd)
+            }}/> 
+            <Button disabled={disabled} text={"Sign Up"} bgColor={"#FF715B"}/> 
           </Logincontainer>
         </Logboxcontainer>
     )

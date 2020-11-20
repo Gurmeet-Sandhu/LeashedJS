@@ -57,7 +57,7 @@ const Logincontainer = styled.div`
 `;
 
 
-const LogBox = ({LoginPart, SignupPart, EmailPart, PasswordPart})=> {
+const LogBox = ({LoginPart, SignupPart})=> {
     const [disabled, setDisabled] = useState(false);
     useEffect(()=>{
         setDisabled(false);
