@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ResourceSubH = styled.div`
     max-width: fit-content;
-    margin: 10%;
+    margin: 10px;
     padding:10px;
     border:${props=>props.Border ? props.Border : "5px solid #2F52E0"};
     border-radius:25px;
@@ -11,7 +11,8 @@ const ResourceSubH = styled.div`
     justify-content:center;
     align-items:center;
     font-family: 'Mukta Mahee', Sans-serif;
-
+    font-weight:bold;
+    background-color:#fff;
     span {
         font-size:20px;
     }

@@ -2,15 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ResourceTextBox = styled.div`
-    max-width: fit-content;
-    margin: 10%;
-    padding:10px;
-    border-radius:25px;
+    width:90%;
+    height:auto;
+    margin: 20px;
+    padding:14px;
+    border-radius:10px;
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color:##1c2222;
+    background-color:RGBA(27,33,33,0.04);
     font-family: 'Poppins', Sans-serif;
+    text-align: justify;
     span {
         font-size:14px;
         weight:regular;
