@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import Button from '../../comps/Button';
 import Inputs from '../../comps/Inputs';
@@ -58,21 +58,37 @@ const Logincontainer = styled.div`
 
 
 const LogBox = ({LoginPart, SignupPart, EmailPart, PasswordPart})=> {
+    const [disabled, setDisabled] = useState(false);
+    useEffect(()=>{
+        setDisabled(false);
+    },[])
+
 
     return (
         <Logboxcontainer>
+
           <Headerpart>
           <Link href="Login"><Logintext>{LoginPart}</Logintext></Link>
           <Link href="SignUp"><Signuptext>{SignupPart}</Signuptext></Link>
           </Headerpart>
          
           <Logincontainer>
-            <Inputs label="Email" color="#2F52E0" />
-            <Inputs label="Password" color="#2F52E0"/> 
-            <Button text={"Sign In"} bgColor={"#2F52E0"}/>           
+            <Inputs label="Email" color="#2F52E0" onChange={(e)=>{
+                  var input_email = e.target.value.length;
+              if (input_email === 0)  setDisabled(false) 
+              console.log(input_email)
+            }} />
+            <Inputs label="Password" color="#2F52E0" onChange={(f)=>{
+                  var input_pswd = f.target.value.length;
+              if (input_pswd === 0)  setDisabled(false)
+              else setDisabled(true)
+              console.log(input_pswd)
+            }}/> 
+            <Button disabled={disabled} text={"Sign In"} bgColor={"#2F52E0"}/>           
             <div className="loginwith">or Login with</div>
             <Social/>
           </Logincontainer>
+
         </Logboxcontainer>
     )
     
