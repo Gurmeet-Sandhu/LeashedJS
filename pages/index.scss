@@ -4,8 +4,16 @@
     align-items: center;
     width:100vw;
     height:100vh;
+    background:
+    linear-gradient(135deg, #fff 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, #fff 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #fff 25%, transparent 25%),
+    linear-gradient(45deg, #fff 25%, transparent 25%);
+    background-size: 100px 100px;
     background-color:#F9CB40;
+
 }
+
 @keyframes lotate {
     from {transform:rotate(0deg); }
     to {transform: rotate(360deg);}
