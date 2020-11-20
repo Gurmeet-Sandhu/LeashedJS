@@ -2,15 +2,24 @@
     width:100%;
     display:flex;
     flex-direction: column;
-    font-weight: bold;
     align-items: center;
     justify-content: center;
+    background-color: #ffffff;
+    background-image:  radial-gradient(#f9cb4054 1.75px, transparent 1.75px), radial-gradient(#f9cb4054 1.75px, #ffffff 1.75px);
+    background-size: 70px 70px;
+    background-position: 0 0,35px 35px;
 }
 
 .ResourcePart{
+    margin-bottom:40px;
     width:90%;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-bottom:1px solid RGBA(27,33,33,0.22);
+}
+
+.Adaptability {
+    margin-top:20px;
 }

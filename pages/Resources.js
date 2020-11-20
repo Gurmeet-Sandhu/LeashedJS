@@ -28,7 +28,7 @@ export default function Resources() {
                   text="Adaptability"
                   Border=""
                 />
-                <ResourceText text={"Adaptability"}/>
+                <ResourceText text={"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."}/>
               </div>
 
               <div className="ResourcePart Trainability">
@@ -36,7 +36,7 @@ export default function Resources() {
                   text="Trainability"
                   Border="5px solid #FF715B"
                 />
-                <ResourceText text={"Trainability"}/>
+                <ResourceText text={"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy."}/>
               </div >
 
               <div className="ResourcePart Personality">
@@ -44,7 +44,7 @@ export default function Resources() {
                   text="Personality"
                   Border="5px solid #F9CB40"
                 />
-                <ResourceText text={"Personality"}/>
+                <ResourceText text={"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text."}/>
               </div>
 
               <div className="ResourcePart PsysicalNeeds">
@@ -52,7 +52,7 @@ export default function Resources() {
                   text="Physical Needs"
                   Border=""
                 />
-                <ResourceText text={"Physical Needs"}/>
+                <ResourceText text={"All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."}/>
               </div>
 
               <div className="ResourcePart Health">
@@ -60,7 +60,7 @@ export default function Resources() {
                   text="Health And Grooming"
                   Border="5px solid #FF715B"
                 />
-                <ResourceText text={"Health and Grooming"}/>
+                <ResourceText text={"It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."}/>
             </div>
           </div>
       </div>
