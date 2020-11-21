@@ -41,7 +41,7 @@ export default function Achievement() {
                 </div>
 
                 <div className="SeeMoreBox">
-                    <Seemore
+                <Seemore
                     />
                 </div>
                 
@@ -69,6 +69,6 @@ export default function Achievement() {
                 </div>
         </div>
       </div>
-</div>
+      </div>
     )
   }

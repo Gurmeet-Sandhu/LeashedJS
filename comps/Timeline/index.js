@@ -10,14 +10,21 @@ const Sub = styled.div`
     font-size: 14px;
 `;
 
+const Wrapper = styled.div`
+    Display: flex; 
+    flex-direction: column;
+    width: 80vw;
+    margin: 5%;
+`;
+
 
 
 const Timeline= ({Htext, Subtext}) =>{
-    return <div>
+    return <Wrapper>
         <Header>{Htext}</Header>
         <Sub> {Subtext} <br></br> <hr></hr></Sub>
     
-    </div>
+    </Wrapper>
 }
 
 Timeline.defaultProps = {
