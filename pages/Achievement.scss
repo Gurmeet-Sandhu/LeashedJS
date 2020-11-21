@@ -1,0 +1,21 @@
+.TopCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin: 5%;
+}
+
+.SeeMoreBox {
+    width: 100vw;
+    height: 3vh;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.InnerMemories {
+    display: flex;
+    overflow: scroll;
+}

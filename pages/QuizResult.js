@@ -1,11 +1,9 @@
 import React from 'react';
 import TopPart from '../comps/TopPart';
-import MemoryCard from '../comps/MemoryCard';
-import FinalDayCard from '../comps/FinalDayCard';
 import Button from '../comps/Button'; 
 import {useRouter} from 'next/router';
 
-export default function Training2() {
+export default function QuizResult() {
     const router = useRouter()
     return (
     <div className="Background"> 

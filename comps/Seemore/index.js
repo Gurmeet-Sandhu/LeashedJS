@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SMwrapper = styled.div`
-    width:80px;
     display:flex;
     justify-content:space-between;
     align-items:top;
