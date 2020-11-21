@@ -1,10 +1,10 @@
 import React from 'react';
 import Signup from '../comps/SignupTitle';
-import SignupBox from '../comps/Signup';
 import Stacked from '../comps/StackedLogo';
 import CreateprofBox from '../comps/Profile';
+import {useRouter} from 'next/router';
 
-export default function Singup() {
+export default function Create() {
     return (
       <div className="SignupContainer">
         <div className="Header">
