@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Button from '../../comps/Button';
 import Inputs from '../../comps/Inputs';
 import Social from '../../comps/Social';
 import Link from 'next/link';
+import axios from 'axios';
+
+import { useCookies } from 'react-cookie'
 
 const Logboxcontainer = styled.div`
 width: 100%;
@@ -57,31 +61,69 @@ const Logincontainer = styled.div`
 `;
 
 
-const LogBox = ({LoginPart, SignupPart, EmailPart, PasswordPart})=> {
+const LogBox = ({ LoginPart, SignupPart, EmailPart, PasswordPart }) => {
 
-    return (
-        <Logboxcontainer>
-          <Headerpart>
-          <Link href="Login"><Logintext>{LoginPart}</Logintext></Link>
-          <Link href="SignUp"><Signuptext>{SignupPart}</Signuptext></Link>
-          </Headerpart>
-         
-          <Logincontainer>
-            <Inputs label="Email" color="#2F52E0" />
-            <Inputs label="Password" color="#2F52E0"/> 
-            <Button text={"Sign In"} bgColor={"#2F52E0"}/>           
-            <div className="loginwith">or Login with</div>
-            <Social/>
-          </Logincontainer>
-        </Logboxcontainer>
-    )
-    
+  const router = useRouter()
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("")
+  const [cookie, setCookie] = useCookies(['user'])
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value)
+  }
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios({
+      method: 'post',
+      url: 'http://localhost:3003/auth/login',
+      data: {
+        username: username,
+        password: password
+      }
+    })
+      .then(resp => {
+        console.log(resp.data.access_token)
+        setCookie('user', JSON.stringify(resp.data.access_token), {
+          path: "/",
+          maxAge: 3600, // Expires after 1hr
+          sameSite: true,
+        })
+        router.push('/Home')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  return (
+    <Logboxcontainer>
+      <Headerpart>
+        <Link href="Login"><Logintext>{LoginPart}</Logintext></Link>
+        <Link href="SignUp"><Signuptext>{SignupPart}</Signuptext></Link>
+      </Headerpart>
+      <form onSubmit={handleSubmit}>
+        <Logincontainer>
+          <Inputs label="Email" color="#2F52E0" type="text" val={username} handleChange={handleUsernameChange} />
+          <Inputs label="Password" color="#2F52E0" type="password" val={password} handleChange={handlePasswordChange} />
+          <Button text={"Sign In"} bgColor={"#2F52E0"} type="submit" />
+          <div className="loginwith">or Login with</div>
+          <Social />
+        </Logincontainer>
+      </form>
+    </Logboxcontainer>
+  )
+
 };
-    
-    
-  
- LogBox.defaultProps = {
-      
-  };
-  
-  export default LogBox;
+
+
+
+LogBox.defaultProps = {
+
+};
+
+export default LogBox;

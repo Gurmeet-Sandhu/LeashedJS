@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import styled, {css} from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import styled, { css } from 'styled-components';
 
 
 const ButtonWrapper = styled.button`
@@ -23,24 +23,24 @@ const ButtonText = styled.div`
     color:#fff;
 `;
 
-const Button= ({text,bgColor,click}) => {
+const Button = ({ text, bgColor, click, type }) => {
     const [clicked, setClicked] = useState(false);
 
-    useEffect(()=>{
+    useEffect(() => {
         setClicked(click);
-    },[click])
+    }, [click])
 
-    return <ButtonWrapper clicked={clicked} onClick={()=>{
+    return <ButtonWrapper type={type} clicked={clicked} onClick={() => {
         setClicked(true)
-    }}bgColor={bgColor}>
-       <ButtonText>{text}</ButtonText>
+    }} bgColor={bgColor}>
+        <ButtonText>{text}</ButtonText>
     </ButtonWrapper>
 }
 
 Button.defaultProps = {
-    text : "default",
-    bgColor : "#111",
-    click:false
+    text: "default",
+    bgColor: "#111",
+    click: false
 }
 
 

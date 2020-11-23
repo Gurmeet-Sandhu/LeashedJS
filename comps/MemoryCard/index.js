@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useRouter} from 'next/router'
 
 
 const MemoryCardContainer = styled.div`
@@ -14,7 +15,7 @@ const MemoryCardContainer = styled.div`
     align-items:center;
     flex-direction:column;
     text-align:center;
-    margin:0 10px;
+    margin:20px 50px;
 
 `
 
@@ -33,17 +34,23 @@ const MemoryDate = styled.div`
 `;
 
 
-const MemoryCard = ({text,date,border}) =>{
-    return <MemoryCardContainer style={{border:border}}>
+const MemoryCard = ({ text, date, border, id }) => {
+    const router = useRouter()
+    return (
+        <MemoryCardContainer key={id} style={{ border: { border } }} onClick={() => router.push({
+            pathname : '/TrainingInfo',
+            query : {day_id : id}
+        })}>
             <MemoryTitle>{text}</MemoryTitle>
             <MemoryDate>{date}</MemoryDate>
         </MemoryCardContainer>
+    )
 }
 
 MemoryCard.defaultProps = {
-    text : "Default Memory Title",
-    date : "yesterday",
-    border : "5px solid #F9CB40;"
+    text: "Default Memory Title",
+    date: "yesterday",
+    border: "5px solid #F9CB40;"
 }
 
 export default MemoryCard;
