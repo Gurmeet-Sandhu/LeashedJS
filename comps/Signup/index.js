@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../../comps/Button';
 import Inputs from '../../comps/Inputs';
 import Link from 'next/link';
+import axios from 'axios';
+import {useRouter} from 'next/router'
 
 const Logboxcontainer = styled.div`
 width: 100%;
@@ -48,51 +50,64 @@ const Logincontainer = styled.div`
 
 
 
-const SignupBox = ({LoginPart, SignupPart})=> {
-  const [disabled, setDisabled] = useState(false);
-  useEffect(()=>{
-      setDisabled(false);
-  },[])
-    return (
-        <Logboxcontainer>
-          <Headerpart>
-            <Link href="/Login"><Logintext>{LoginPart}</Logintext></Link>
-            <Link href="/Signup"><Signuptext>{SignupPart}</Signuptext></Link>
-          </Headerpart>
-         
-          <Logincontainer>
-            <Inputs label="Your Name" color="#FF715B" onChange={(e)=>{
-                  var input_yourname = e.target.value.length;
-              if (input_yourname === 0)  setDisabled(false) 
-              console.log(input_yourname)
-            }}/>
-            <Inputs label="Username" color="#FF715B" onChange={(e)=>{
-                  var input_useranme = e.target.value.length;
-              if (input_useranme === 0)  setDisabled(false) 
-              console.log(input_useranme)
-            }}/>
-            <Inputs label="Email" color="#FF715B" onChange={(e)=>{
-                  var input_email = e.target.value.length;
-              if (input_email === 0)  setDisabled(false) 
-              console.log(input_email)
-            }} />
-            <Inputs label="Password" color="#FF715B" onChange={(f)=>{
-                  var input_pswd = f.target.value.length;
-              if (input_pswd === 0)  setDisabled(false)
-              else setDisabled(true)
-              console.log(input_pswd)
-            }}/> 
-            <Button disabled={disabled} text={"Sign Up"} bgColor={"#FF715B"}/> 
-          </Logincontainer>
-        </Logboxcontainer>
-    )
-    
+const SignupBox = ({ LoginPart, SignupPart }) => {
+
+  const router = useRouter()
+  const [info, setInfo] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    username: "",
+    password: ""
+  })
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios({
+      method: 'post',
+      url: 'http://localhost:3003/auth/signup',
+      data: {
+        first_name : info.firstName,
+        last_name : info.lastName,
+        email : info.email,
+        username: info.username,
+        password: info.password
+      }
+    })
+      .then(resp => {
+        console.log(resp.data)
+        router.push('/Login')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  return (
+    <Logboxcontainer>
+      <Headerpart>
+        <Link href="/Login"><Logintext>{LoginPart}</Logintext></Link>
+        <Link href="/Signup"><Signuptext>{SignupPart}</Signuptext></Link>
+      </Headerpart>
+      <form onSubmit={handleSubmit}>
+        <Logincontainer>
+          <Inputs type="text" label="First Name" val={info.firstName} handleChange={(e) => setInfo({ ...info, firstName: e.target.value })} color="#FF715B" />
+          <Inputs type="text" label="Last Name" val={info.lastName} handleChange={(e) => setInfo({ ...info, lastName: e.target.value })} color="#FF715B" />
+          <Inputs type="text" label="Email" val={info.email} handleChange={(e) => setInfo({ ...info, email: e.target.value })} color="#FF715B" />
+          <Inputs type="text" label="Username" val={info.username} handleChange={(e) => setInfo({ ...info, username: e.target.value })} color="#FF715B" />
+          <Inputs type="password" label="Password" val={info.password} handleChange={(e) => setInfo({ ...info, password: e.target.value })} color="#FF715B" />
+          <Button type="submit" text={"Sign Up"} bgColor={"#FF715B"} />
+        </Logincontainer>
+      </form>
+    </Logboxcontainer>
+  )
+
 };
-    
-    
-  
- SignupBox.defaultProps = {
-      
-  };
-  
-  export default SignupBox;
+
+
+
+SignupBox.defaultProps = {
+
+};
+
+export default SignupBox;

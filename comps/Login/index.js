@@ -1,9 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Button from '../../comps/Button';
 import Inputs from '../../comps/Inputs';
 import Social from '../../comps/Social';
 import Link from 'next/link';
+import axios from 'axios';
+
+import { useCookies } from 'react-cookie'
 
 const Logboxcontainer = styled.div`
 width: 100%;
@@ -57,47 +61,69 @@ const Logincontainer = styled.div`
 `;
 
 
-const LogBox = ({LoginPart, SignupPart})=> {
-    const [disabled, setDisabled] = useState(false);
-    useEffect(()=>{
-        setDisabled(false);
-    },[])
+const LogBox = ({ LoginPart, SignupPart, EmailPart, PasswordPart }) => {
 
+  const router = useRouter()
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("")
+  const [cookie, setCookie] = useCookies(['user'])
 
-    return (
-        <Logboxcontainer>
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value)
+  }
 
-          <Headerpart>
-          <Link href="Login"><Logintext>{LoginPart}</Logintext></Link>
-          <Link href="SignUp"><Signuptext>{SignupPart}</Signuptext></Link>
-          </Headerpart>
-         
-          <Logincontainer>
-            <Inputs label="Email" color="#2F52E0" onChange={(e)=>{
-                  var input_email = e.target.value.length;
-              if (input_email === 0)  setDisabled(false) 
-              console.log(input_email)
-            }} />
-            <Inputs label="Password" color="#2F52E0" onChange={(f)=>{
-                  var input_pswd = f.target.value.length;
-              if (input_pswd === 0)  setDisabled(false)
-              else setDisabled(true)
-              console.log(input_pswd)
-            }}/> 
-            <Button disabled={disabled} text={"Sign In"} bgColor={"#2F52E0"}/>           
-            <div className="loginwith">or Login with</div>
-            <Social/>
-          </Logincontainer>
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value)
+  }
 
-        </Logboxcontainer>
-    )
-    
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios({
+      method: 'post',
+      url: 'http://localhost:3003/auth/login',
+      data: {
+        username: username,
+        password: password
+      }
+    })
+      .then(resp => {
+        console.log(resp.data.access_token)
+        setCookie('user', JSON.stringify(resp.data.access_token), {
+          path: "/",
+          maxAge: 3600, // Expires after 1hr
+          sameSite: true,
+        })
+        router.push('/Home')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  return (
+    <Logboxcontainer>
+      <Headerpart>
+        <Link href="Login"><Logintext>{LoginPart}</Logintext></Link>
+        <Link href="SignUp"><Signuptext>{SignupPart}</Signuptext></Link>
+      </Headerpart>
+      <form onSubmit={handleSubmit}>
+        <Logincontainer>
+          <Inputs label="Email" color="#2F52E0" type="text" val={username} handleChange={handleUsernameChange} />
+          <Inputs label="Password" color="#2F52E0" type="password" val={password} handleChange={handlePasswordChange} />
+          <Button text={"Sign In"} bgColor={"#2F52E0"} type="submit" />
+          <div className="loginwith">or Login with</div>
+          <Social />
+        </Logincontainer>
+      </form>
+    </Logboxcontainer>
+  )
+
 };
-    
-    
-  
- LogBox.defaultProps = {
-      
-  };
-  
-  export default LogBox;
+
+
+
+LogBox.defaultProps = {
+
+};
+
+export default LogBox;

@@ -14,16 +14,16 @@ const Label = styled.div`
     text-align: left;
 `
 
-const Inputs = ({label,color, onChange}) =>{
-   return <div>
-       <Label style={{color:color}}>{label}</Label>
-       <InputBox onChange={onChange}></InputBox>
-   </div>
+const Inputs = ({ label, color, type, val, handleChange }) => {
+    return <div>
+        <Label style={{ color: color }}>{label}</Label>
+        <InputBox type={type} value={val} onChange={handleChange}></InputBox>
+    </div>
 }
 
-Inputs.defaultProps={
-   label:"Default Label",
-   color:"black"
+Inputs.defaultProps = {
+    label: "Default Label",
+    color: "black"
 }
 
 export default Inputs;

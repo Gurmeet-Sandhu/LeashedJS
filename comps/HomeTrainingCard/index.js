@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axios from 'axios'
+import { useRouter } from 'next/router'
 
-const CardsContainer =styled.div`
+
+const CardsContainer = styled.div`
     padding: 20px;
 `
 
@@ -9,7 +12,7 @@ const TrainingCardHome = styled.div`
     
 `
 
-const TrainingCardHomeBox = styled.div `
+const TrainingCardHomeBox = styled.div`
     width: 274px;
     height: 164px;
     background: #2F52E0;
@@ -45,18 +48,49 @@ const TrainingCardHomeYesterdayText = styled.div`
     margin-left:-70px;
 `
 
-const HomeTrainingCard = ({title, day, date}) =>{
+const HomeTrainingCard = ({ id, token }) => {
+
+    const router = useRouter()
+    const [info, setInfo] = useState({ title: "", duration: 0, days: [], quiz: "" });
+
+    useEffect(() => {
+
+        const apiURL = "http://localhost:3003"
+        const authAxios = axios.create({
+            baseURL: apiURL,
+            headers: {
+                Authorization: `${token}`
+            }
+        })
+
+        authAxios.get(`/user/level/${id}`)
+            .then(resp => {
+                setInfo({ ...info, title: resp.data.title, duration: resp.data.duration, days: resp.data.days, quiz: resp.data.quiz })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
     return <CardsContainer>
         <TrainingCardHome>
-            <TrainingCardHomeBox >
-                <TrainingCardHomeTitle>{title}</TrainingCardHomeTitle>
-                <TrainingCardHomeDayText>{day}</TrainingCardHomeDayText>
-                <TrainingCardHomeYesterdayText>{date}</TrainingCardHomeYesterdayText>
+            <TrainingCardHomeBox key={id} onClick={() => router.push({
+                pathname: '/Training2',
+                query: {
+                    pid: id,
+                    title: info.title,
+                    duration: info.duration,
+                    days: info.days,
+                    quiz: info.quiz
+                }
+            })}>
+                <TrainingCardHomeTitle>{info.title}</TrainingCardHomeTitle>
+                <TrainingCardHomeDayText>{info.duration}</TrainingCardHomeDayText>
+                <TrainingCardHomeYesterdayText></TrainingCardHomeYesterdayText>
             </TrainingCardHomeBox>
         </TrainingCardHome>
     </CardsContainer>
 }
-HomeTrainingCard.defaultProps ={
+HomeTrainingCard.defaultProps = {
     title: "Default Title Goes Here",
     day: "Day #",
     date: "Defaultday",
