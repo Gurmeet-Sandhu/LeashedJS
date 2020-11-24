@@ -21,18 +21,26 @@ export default function Training() {
           />
         </div>
         <div className="TrainingCard">
-          <TrainingPageCard 
-          title="Master the Dog Walk"
-          />
-          <TrainingPageCard 
-          title="Pee & Poo"
-          />
-          <TrainingPageCard 
-          title="Basic Dog Commands"
-          />
-          <TrainingPageCard 
-          title="Socialization"
-          />
+          <div className="training_card" onClick={() => router.push('/Training2')}>
+            <TrainingPageCard 
+            title="Master the Dog Walk"
+            />
+          </div>
+          <div className="training_card">
+            <TrainingPageCard 
+            title="Pee & Poo"
+            />
+          </div>
+          <div className="training_card">
+            <TrainingPageCard 
+            title="Basic Dog Commands"
+            />
+          </div>
+            <div className="training_card">
+            <TrainingPageCard 
+            title="Socialization"
+            />
+          </div>
         </div>
       </div>
 

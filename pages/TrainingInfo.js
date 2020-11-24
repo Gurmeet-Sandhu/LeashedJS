@@ -33,7 +33,7 @@ export default function TrainingInfo() {
                 />
                 </div> 
         </div>
-            <div className="QuizButton">
+            <div className="QuizButton" >
                     <Button 
                         text="Ready? Take the Quiz!"
                         bgColor="#FF715B"
