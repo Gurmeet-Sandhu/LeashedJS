@@ -1,19 +1,45 @@
-.TopCards {
+.Background {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.AchievementContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    background-image:  radial-gradient(#f9cb4054 1.75px, transparent 1.75px), radial-gradient(#f9cb4054 1.75px, #ffffff 1.75px);
+    background-size: 70px 70px;
+    background-position: 0 0,35px 35px;
+
+    .TopBar{
+        margin-bottom:20px;
+    }
+}
+
+
+.AchievementBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    margin: 5%;
+    margin-bottom:20px;
+    
+    .TopCards {
+        width:90%;
+        margin-bottom:20px;
+    }
 }
+    .SeeMore {
+        width: 90%;
+        height: 3vh;
+        display: flex;
+        justify-content: flex-end;
 
-.SeeMoreBox {
-    width: 100vw;
-    height: 3vh;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-}
+    }
 
 .InnerMemories {
     display: flex;
