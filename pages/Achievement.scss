@@ -1,14 +1,24 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 .Background_achievement {
     display:flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin:0;
 }
 
 
+
 .AchievementContainer {
-    width: 100vw;
-    height: 100vh;
+    width:100%;
     background-color: #ffffff;
     background-image:  radial-gradient(#f9cb4054 1.75px, transparent 1.75px), radial-gradient(#f9cb4054 1.75px, #ffffff 1.75px);
     background-size: 70px 70px;
@@ -25,7 +35,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     margin-bottom:20px;
     
     .TopCards {

@@ -11,13 +11,17 @@ export default function TrainingInfo() {
         <div className="Background">
         <div className="TopBar">
             <TopPart 
-                    TopHeight="258px"
-                    Pagename="Master The Dog Walk"
-                    Stat="Day 1"
-                    icon={"/arrow_b_l.png"}
                     onClick={()=>{
-                        router.push('/Training2')
+                        router.push('/Training')
                     }}
+                    TopHeight="200px"
+                    Pagename="Master The Dog Walk"
+                    Stat="You are on: Day 1"
+                    textSize="30px"
+                    bgColor="#2F52E0"
+                    color="#fff"
+
+                    icon={"/Back.png"}
                     />
         </div>
         <div className="InfoSection">

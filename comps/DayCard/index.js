@@ -14,6 +14,7 @@ const DayContainer = styled.div`
     text-align:center;
     background-color:${props=>props.completed ? "#F9CB40" : "#fff"};
     opacity:${props=>props.completed ? "80%" : "100%"};
+    margin:5px;
 
 `;
 
@@ -35,7 +36,7 @@ const Complete = styled.div`
 
 
 const DayCard = ({text, date, completed}) =>{
-    const [complete, setComplete] = useState(true);
+    const [complete, setComplete] = useState(false);
     return <DayContainer completed={completed}>
             <Day>{text}</Day>
             <Complete>{date}</Complete>
@@ -46,7 +47,7 @@ DayCard.defaultProps = {
     text : "Day N",
     date : "complete",
     bgColor: "#fff",
-    completed: true
+    completed: false
 }
 
 export default DayCard;

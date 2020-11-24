@@ -20,11 +20,10 @@ const MemoryCardContainer = styled.div`
 
 const MemoryTitle = styled.div`
     width:100%;
-    display:flex;
-    align-items:center;
     font-size:14pt;
     margin:5px;
     flex:3;
+    text-align:center;
 `;
 
 const MemoryDate = styled.div`
