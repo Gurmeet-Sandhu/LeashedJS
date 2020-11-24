@@ -4,6 +4,7 @@ import GradientCard from'../comps/GradientCard';
 import PatternedCard from '../comps/PatternedCard';
 import Seemore from '../comps/Seemore';
 import MemoryCard from '../comps/MemoryCard';
+
 import SubHeading from'../comps/Subheading';
 import {useRouter} from 'next/router';
 
@@ -26,46 +27,46 @@ export default function Achievement() {
           />
         </div>
         <div className="AchievementBox">
-                <div className="TopCards">
-                    <PatternedCard 
-                        text="Compeleted How to Use Treats"
-                        datetext="April 20, 2020"
-                    />
-                </div>
+          <div className="TopCards">
+              <PatternedCard 
+                  text="Compeleted How to Use Treats"
+                  datetext="April 20, 2020"
+              />
+          </div>
 
-                <div className="TopCards">
-                    <GradientCard 
-                            text="Compeleted How to Use Treats"
-                            daytext="Yesterday"
-                        />
-                </div>
+          <div className="TopCards">
+              <GradientCard 
+                      text="Compeleted How to Use Treats"
+                      daytext="Yesterday"
+                  />
+          </div>
 
-                <div className="SeeMore" onClick={() => router.push('/Timeline')}>
-                <Seemore/>
+          <div className="SeeMore" onClick={() => router.push('/Timeline')}>
+          <Seemore/>
+          </div>
+         </div>
+          <div>  
+              <SubHeading 
+                  text="Memories"
+              />
+              <div className="MemoriesBox">
+                <div className="InnerMemories">
+                <MemoryCard 
+                    text="First Walk with Humphrey"
+                    date="3 days ago"
+                    border="5px solid #F9CB40"
+                />
+                <MemoryCard 
+                    text="Visited Vet for second time"
+                    date="April 20, 2020"
+                    border="5px solid #2F52E0"
+                />
+                <MemoryCard 
+                    text="Visited Dog Park in Surrey"
+                    date="March 03"
+                    border="5px solid #FF715B"
+                />
                 </div>
-              </div>
-              <div>  
-                <div className="MemoriesBox">
-                    <SubHeading 
-                        text="Memories"
-                    />
-                    <div className="InnerMemories">
-                    <MemoryCard 
-                        text="First Walk with Humphrey"
-                        date="3 days ago"
-                        border="5px solid #F9CB40"
-                    />
-                    <MemoryCard 
-                        text="Visited Vet for second time"
-                        date="April 20, 2020"
-                        border="5px solid #2F52E0"
-                    />
-                    <MemoryCard 
-                        text="Visited Dog Park in Surrey"
-                        date="March 03"
-                        border="5px solid #FF715B"
-                    />
-                    </div>
                 </div>
         </div>
       </div>

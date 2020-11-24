@@ -5,7 +5,7 @@ import MenuBox from '../../comps/Menu';
 
 const TopPartWrapper = styled.div`
     width:100%;
-    height:120px;
+    height:130px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -15,10 +15,11 @@ const TopPartWrapper = styled.div`
     position:relative;
     -webkit-box-shadow: 0px 6px 17px 3px rgba(0,0,0,0.37); 
     box-shadow: 0px 6px 17px 3px rgba(0,0,0,0.37);
+    color:#1B2121;
 
 `;
 
-const Hamburger = styled.div `
+const Icon = styled.div `
     width:9%;
     position:absolute;
     top:15px;
@@ -33,7 +34,7 @@ const Hamburger = styled.div `
 
 const PageName = styled.div `
     display:inline-flex;
-    font-size:40px;npm
+    font-size:40px;
     font-wight:bold;
     align-text:center;
 `
@@ -48,27 +49,29 @@ const MenuWrapper = styled.div`
 
 const DogName = styled.div`
     font-size: 30px;
+    align-text:center;
 `;
 
 
 const Status = styled.div`
-    font-size: 25px;
+    font-size: 15px;
     font-weight: lighter;
+    text-align:center;
 `;
 
 const TopText = styled.div`
 `;
 
-const TopPart= ({Pagename, TopHeight, DName, Stat, icon, onClick, onReturn, openMenu}) => {
-    return <TopPartWrapper style={{height:TopHeight}}>
-        <Hamburger onClick={onClick}>
+const TopPart= ({Pagename, TopHeight, DName, Stat, icon, onClick, onReturn, openMenu, textSize, bgColor, color}) => {
+    return <TopPartWrapper style={{height:TopHeight, backgroundColor:bgColor, color:color}}>
+        <Icon onClick={onClick}>
             <img src={icon}/>
-            </Hamburger>
-            <TopText>
-                <PageName>{Pagename}</PageName>
-                <DogName>{DName}</DogName>
-                <Status>{Stat}</Status>
-            </TopText>
+        </Icon>
+        <TopText>
+            <PageName style={{fontSize:textSize}}>{Pagename}</PageName>
+            <DogName>{DName}</DogName>
+            <Status>{Stat}</Status>
+        </TopText>
         <MenuWrapper openMenu={openMenu}>
             <MenuBox  
             Name1="Emma"
@@ -89,7 +92,10 @@ const TopPart= ({Pagename, TopHeight, DName, Stat, icon, onClick, onReturn, open
 TopPart.defaultProps = {
     Pagename : "default",
     TopHeight: "130px",
-    icon: "/Menu Icon.png"
+    icon: "/Menu Icon.png",
+    textSize:"40px",
+    bgColor:"#F9CB40",
+    color:"#1B2121"
 }
 
 
