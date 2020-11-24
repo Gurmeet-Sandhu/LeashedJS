@@ -1,5 +1,6 @@
 import React , {useState} from 'react';
 import TopPart from '../comps/TopPart';
+import DogBox from '../comps/DogBox';
 import ResourceSub from '../comps/ResourceSub';
 import ResourceText from '../comps/ResourceText';
 import {useRouter} from 'next/router';
@@ -22,7 +23,10 @@ export default function Resources() {
             />
           </div>
           <div className="ResourceSection">
+              <div className="dog">
 
+                <DogBox dogname="Welsh Corgi"/>
+              </div>
               <div className="ResourcePart Adaptability">
                 <ResourceSub 
                   text="Adaptability"
