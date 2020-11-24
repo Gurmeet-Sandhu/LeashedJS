@@ -6,7 +6,7 @@ import {useRouter} from 'next/router';
 export default function Timelines() {
     const router = useRouter()
     return (
-    <div className="Background"> 
+        <div className="timelineContainer">
             <div className="TopBar"> 
             <TopPart 
                 onClick={()=>{
@@ -39,6 +39,6 @@ export default function Timelines() {
                     Subtext="Oct 16, 2020"
                 />
             </div>
-    </div>
+        </div>
     )
   }
