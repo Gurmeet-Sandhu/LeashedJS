@@ -11,7 +11,7 @@ export default function Achievement() {
   const router = useRouter()
   const [expanded, setExpanded] = useState(false);
     return (
-    <div className="Background">
+    <div className="Background_achievement">
       <div className="AchievementContainer">
         <div className="TopBar">
           <TopPart 

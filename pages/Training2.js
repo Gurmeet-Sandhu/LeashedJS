@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TopPart from '../comps/TopPart';
 import MemoryCard from '../comps/MemoryCard';
 import FinalDayCard from '../comps/FinalDayCard';
@@ -21,7 +21,7 @@ export default function Training2() {
                 />
             </div>
             <div className="DaysSection"> 
-                <div className="DayCards"> 
+                <div className="DayCards" onClick={() => router.push('/TrainingInfo')}> 
                     <MemoryCard 
                             text="Day 1"
                             border="5px solid #F9CB40"            
