@@ -19,10 +19,11 @@ const MemoryCardContainer = styled.div`
 `
 
 const MemoryTitle = styled.div`
+    width:100%;
     display:flex;
     align-items:center;
     font-size:14pt;
-    margin:10px;
+    margin:5px;
     flex:3;
 `;
 

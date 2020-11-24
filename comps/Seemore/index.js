@@ -7,7 +7,10 @@ const SMwrapper = styled.div`
     align-items:top;
 
 
+
     .arrow{
+        margin-left:10px;
+        margin-top:2.5px;
         width:auto;
         img {
             width:60%;
