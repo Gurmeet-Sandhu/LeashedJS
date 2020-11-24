@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PatternedCardContaienr = styled.div`
-    width: 368px;
+    width: 100%;
     height: 174px;
     background-color:#2F52E0;
     border-radius:30px;
     display:flex;
     align-items:center;
+    position:relative;
 `
 
 const PatternedCardTitle = styled.div`
@@ -18,12 +19,13 @@ const PatternedCardTitle = styled.div`
     color:white;
 `
 const DateText = styled.div`
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 300;
-    text-align: right;
-    margin-top:120px;
-    color:white;
+    color:#fff;
+    position:absolute;
+    right:20px;
+    bottom:20px;
 `
 const PatternedCard = ({text,datetext,textcolor}) => {
     return <PatternedCardContaienr>

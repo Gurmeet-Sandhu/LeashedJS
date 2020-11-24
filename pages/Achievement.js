@@ -12,7 +12,7 @@ export default function Achievement() {
   const [expanded, setExpanded] = useState(false);
     return (
     <div className="Background">
-      <div className="TrainingContainer">
+      <div className="AchievementContainer">
         <div className="TopBar">
           <TopPart 
            Pagename ="Achievements"
@@ -40,11 +40,11 @@ export default function Achievement() {
                         />
                 </div>
 
-                <div className="SeeMoreBox">
-                <Seemore
-                    />
+                <div className="SeeMore" onClick={() => router.push('/Timeline')}>
+                <Seemore/>
                 </div>
-                
+              </div>
+              <div>  
                 <div className="MemoriesBox">
                     <SubHeading 
                         text="Memories"
