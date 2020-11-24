@@ -1,7 +1,19 @@
+
+.timelineContainer {
+    display:flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    background-image:  radial-gradient(#f9cb4054 1.75px, transparent 1.75px), radial-gradient(#f9cb4054 1.75px, #ffffff 1.75px);
+    background-size: 70px 70px;
+    background-position: 0 0,35px 35px;
+}
+
+
 .TimelineBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 10%;
+    
 }
