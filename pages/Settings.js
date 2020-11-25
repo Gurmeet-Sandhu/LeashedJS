@@ -10,7 +10,7 @@ export default function Settings() {
     const router = useRouter();
     const [expanded, setExpanded] = useState(false);
     return (
-     <div className="Background">
+     <div className="Background_Settings">
          <div className="TopBar">
           <TopPart 
            Pagename ="Settings"

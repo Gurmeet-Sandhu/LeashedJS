@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FinalDayCardContainer = styled.div`
+    display:flex;
+    justify-content: space-around;
+    flex-direction:column;
+    align-item:center;
     width: 291px;
     height: 135px;
     border: solid 5px #FF715B; 
@@ -9,18 +13,16 @@ const FinalDayCardContainer = styled.div`
 `
 
 const FinalDayCardDayTitle = styled.div`
-    font-size:18px;
+    font-size:16pt;
     font-weight:bold;
     display:flex;
     justify-content: center;
     align-item:center;
-    margin-top:20px;
-    margin-bottom:15px;
 
 `
 
 const FinalDayCardSubtitle = styled.div`
-    font-size:18px;
+    font-size:16pt;
     font-weight:bold;
     display:flex;
     justify-content: center;
@@ -32,7 +34,6 @@ const FinalDaySmallText = styled.div`
     display:flex;
     justify-content: center;
     align-item:center;
-    margin-top:30px;
     color: rgba(27, 33, 33, 0.8);
 `
 
