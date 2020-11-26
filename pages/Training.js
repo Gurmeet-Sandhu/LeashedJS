@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TopPart from '../comps/TopPart';
 import TrainingPageCard from '../comps/TrainingPageCard';
+import LockedTrainingCard from '../comps/LockedTrainingCard';
 import {useRouter} from 'next/router';
 
 export default function Training() {
@@ -27,17 +28,17 @@ export default function Training() {
             />
           </div>
           <div className="training_card">
-            <TrainingPageCard 
-            title="Pee & Poo"
+            <LockedTrainingCard 
+            title="Potty Training"
             />
           </div>
           <div className="training_card">
-            <TrainingPageCard 
+            <LockedTrainingCard 
             title="Basic Dog Commands"
             />
           </div>
             <div className="training_card">
-            <TrainingPageCard 
+            <LockedTrainingCard 
             title="Socialization"
             />
           </div>
