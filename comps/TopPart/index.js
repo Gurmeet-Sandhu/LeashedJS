@@ -56,7 +56,7 @@ const DogName = styled.div`
 const Status = styled.div`
     font-size: 15px;
     font-weight: lighter;
-    text-align:center;
+    text-align:left;
 `;
 
 const TopText = styled.div`

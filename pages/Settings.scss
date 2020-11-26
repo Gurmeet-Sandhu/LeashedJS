@@ -1,3 +1,16 @@
+.Background_Settings {
+    width: 100%;
+    min-width:100%;
+    max-width:412px;
+    height: 100%;
+    min-height:100vh;
+    overflow: auto;
+    display:flex;
+    flex-direction: column;
+    background-image:url('/pattern_p_o.png');
+    background-repeat:repeat space;
+}
+
 .SettingsSection {
     width: 100vw;
     display: flex; 
