@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 
 const Tipboxcontainer = styled.div`
@@ -8,13 +8,13 @@ background: #ffffff;
 border: 5px solid #2F52E0;
 box-sizing: border-box;
 border-radius: 30px;
+visibility:${props=>props.hiddentext ? "visible" : "hidden"};
 `;
 
 const Headertitle = styled.div`
 margin-left:25px;
 margin-top:25px;
 float:left;
-font-family: Poppins, Sans-serif;
 font-size:36px;
 `;
 
@@ -30,44 +30,39 @@ margin-left:45px;
 width:223px;
 float:center;
 text-align:center;
-font-family: Poppins, Sans-serif;
 font-style: medium;
 font-size:20px;
 `;
 
-const Tipbutton = styled.div`
-margin-top:50px;
-margin-left:25px;
-width:251px;
-height: 39.92px;
-border-radius: 193px;
-border: 4px solid #2F52E0;
-fill: solid;
-background-color: #2F52E0;
-float:center;
-text-align:center;
-justify-content: center;
 
+const Container = styled.div``;
+
+const TipsButton = styled.div`
+    justify-content:center;
+    align-items:center;
+    padding:4px;
+    border-style:none;
+    background-color:transparent;
+    color:#FF715B;
+    font-weight:bold;
 `;
-
-const Firsttext = styled.div`
-justify-content: center;
-margin:7px;
-font-family: Poppins, Sans-serif;
-font-size:24px;
-color: #ffffff;
-`;
-
 
 const TipBox = ({Header1,Tiptext1})=> {
-
+    const [hiddentext, setHiddentext] = useState(false);
     return (
-        <Tipboxcontainer>
+        <Container>
+            <TipsButton onClick={()=>{
+                setHiddentext(true);
+            }}>Tips!</TipsButton>
+            <Tipboxcontainer hiddentext={hiddentext}>
           <Headertitle>{Header1}</Headertitle>
-            <Closebutton><img src="/close.png" /></Closebutton>  
+            <Closebutton onClick={()=>{
+                setHiddentext(false);
+            }}><img src="/close.png" /></Closebutton>  
             <Tiptext>{Tiptext1}</Tiptext>
-            <Tipbutton><Firsttext>Text</Firsttext></Tipbutton>
         </Tipboxcontainer>
+        </Container>
+        
     )
     
 };

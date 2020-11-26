@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
 
 
-const ProfButtonWrapper = styled.button`
-    display:flex;
+const ProfButtonWrapper = styled.div`
     justify-content:center;
     align-items:center;
     padding:4px;
@@ -29,7 +28,9 @@ const TipsButton= ({text,bgColor,highlighted}) => {
             }}>
             <ProfButtonText>{text}</ProfButtonText>
             </ProfButtonWrapper>
+            
 }
+
 
 TipsButton.defaultProps = {
     text : "Tips!",
