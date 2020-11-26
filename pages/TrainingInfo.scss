@@ -1,14 +1,41 @@
+.InfoWrapper {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .InfoSection {
-    width: 100vw;
-    height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+
+.TipBtn {
+    display:flex;
+    justify-content: flex-end;   
+}
+
+.TipBox {
+    position: relative;
+    width:90%;
+    height:100%;
+}
+
+.trainingDesc {
+    width: 100%;
+    height: auto;
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
+    margin:auto;
 }
 
 .QuizButton {
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: 5%;
+    margin:20px;
 }

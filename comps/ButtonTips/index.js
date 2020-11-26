@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import styled, {css} from 'styled-components';
+import {MyContext} from '../context';
 
 
 const ProfButtonWrapper = styled.div`
@@ -15,17 +16,13 @@ const ProfButtonText = styled.div`
     border:none;
     margin:5px;
     backgroundcolor:transparent;
-    color:${props=>props.highlighted ? "#FF715B" : "#FF715B"};
+    color:#FF715B;
     font-weight:bold;
 `;
 
-const TipsButton= ({text,bgColor,highlighted}) => {
-    const [highlight, setHighlight] = useState(true);
-    return <ProfButtonWrapper highlighted={highlight} 
-            bgColor={bgColor} 
-            onClick={()=> { 
-                setHighlight(!highlight);
-            }}>
+const TipsButton= ({text, onClick}) => {
+    return <ProfButtonWrapper
+            onClick={onClick}>
             <ProfButtonText>{text}</ProfButtonText>
             </ProfButtonWrapper>
             
