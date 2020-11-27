@@ -24,7 +24,7 @@ const ProfButtonText = styled.div`
 
 const Button2= ({text,bgColor,highlighted, onClick}) => {
     const [highlight, setHighlight] = useState(true);
-    return <ProfButtonWrapper highlighted={highlight} 
+    return <ProfButtonWrapper highlighted={true} 
             bgColor={bgColor} 
             onClick={onClick}>
             <ProfButtonText>{text}</ProfButtonText>

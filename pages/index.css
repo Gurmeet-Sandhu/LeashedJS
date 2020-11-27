@@ -1,0 +1,77 @@
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #fff 25%, transparent 25%) -50px 0, linear-gradient(225deg, #fff 25%, transparent 25%) -50px 0, linear-gradient(315deg, #fff 25%, transparent 25%), linear-gradient(45deg, #fff 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: #F9CB40;
+}
+
+@-webkit-keyframes lotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.center_content {
+  -webkit-animation: lotate 2s infinite;
+          animation: lotate 2s infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes logocolor {
+  50% {
+    -webkit-filter: invert(58%) sepia(72%) saturate(2337%) hue-rotate(324deg) brightness(104%) contrast(101%);
+            filter: invert(58%) sepia(72%) saturate(2337%) hue-rotate(324deg) brightness(104%) contrast(101%);
+  }
+  100% {
+    -webkit-filter: invert(22%) sepia(79%) saturate(2704%) hue-rotate(223deg) brightness(96%) contrast(87%);
+            filter: invert(22%) sepia(79%) saturate(2704%) hue-rotate(223deg) brightness(96%) contrast(87%);
+  }
+}
+
+@keyframes logocolor {
+  50% {
+    -webkit-filter: invert(58%) sepia(72%) saturate(2337%) hue-rotate(324deg) brightness(104%) contrast(101%);
+            filter: invert(58%) sepia(72%) saturate(2337%) hue-rotate(324deg) brightness(104%) contrast(101%);
+  }
+  100% {
+    -webkit-filter: invert(22%) sepia(79%) saturate(2704%) hue-rotate(223deg) brightness(96%) contrast(87%);
+            filter: invert(22%) sepia(79%) saturate(2704%) hue-rotate(223deg) brightness(96%) contrast(87%);
+  }
+}
+
+.logo {
+  -webkit-animation: logocolor 1s infinite;
+          animation: logocolor 1s infinite;
+  -webkit-animation-timing-function: steps(1, start);
+          animation-timing-function: steps(1, start);
+  -webkit-filter: invert(58%) sepia(72%) saturate(2337%) hue-rotate(324deg) brightness(104%) contrast(101%);
+          filter: invert(58%) sepia(72%) saturate(2337%) hue-rotate(324deg) brightness(104%) contrast(101%);
+}
+/*# sourceMappingURL=index.css.map */
