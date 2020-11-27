@@ -6,5 +6,5 @@ export default {
   component: Button2,
 };
 
-export const ProfileButton = () => <Button2 />
+export const SecondButton = () => <Button2 />
 

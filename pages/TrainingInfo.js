@@ -3,8 +3,9 @@ import {useRouter} from 'next/router';
 import TopPart from '../comps/TopPart';
 import Paragraphs from '../comps/Paragraphs';
 import TipBox from '../comps/Tips';
-import Button from '../comps/Button';
+import Button2 from '../comps/Button2';
 import TipsButton from '../comps/ButtonTips';
+import Quiz from '../comps/Quiz';
 import {MyContext} from '../comps/context';
 
 export default function TrainingInfo() {
@@ -24,7 +25,6 @@ export default function TrainingInfo() {
                     textSize="30px"
                     bgColor="#2F52E0"
                     color="#fff"
-
                     icon={"/Back.png"}
                     />
         </div>
@@ -44,6 +44,11 @@ export default function TrainingInfo() {
             <TipBox/>
         </div>
 
+        <div className="QuizBox">
+            <Quiz/>
+        </div>
+        
+
         <div className="trainingDesc">
                 <Paragraphs 
                     content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
@@ -51,9 +56,12 @@ export default function TrainingInfo() {
         </div>
     
         <div className="QuizButton" >
-                <Button 
+                <Button2 
                     text="Ready? Take the Quiz!"
                     bgColor="#FF715B"
+                    onClick={()=> {
+                        context.setQuizbox(!context.quizbox)
+                    }}
                 />
         </div> 
                     

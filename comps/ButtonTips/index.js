@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import styled, {css} from 'styled-components';
 import {MyContext} from '../context';
 
