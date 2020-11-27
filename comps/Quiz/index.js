@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {MyContext} from '../context'
+import Button3 from '../Button3';
 
 const QuizBox = styled.div`
 width:100%;
@@ -12,7 +13,7 @@ border-radius: 25px;
 display:flex;
 flex-direction:column;
 justify-content:center;
-algin-items:center;
+align-items:center;
 opacity:${props=> props.opacity ? "1" : "0"};
 transform: ${props=>props.transform ? "translateY(0px)" : "translateY(100px)"};
 position:absolute;
@@ -21,10 +22,14 @@ transition: 0.3s all ease;
 
 
 const QuizBoxTop = styled.div`
+    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     flex:1;
+    max-height:90vh;
+    overflow:scroll;
+
 `;
 
 const QuizTitle = styled.div`
@@ -48,9 +53,20 @@ const QuizText = styled.div`
     color:#000;
     flex:10;
     padding:10px;
-    flex:9
+    flex:7
 `;
 
+const BtnWrapper = styled.div`
+    display:flex;
+    width:90%;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    
+    .answer-btn{
+        margin:4px;
+    }
+`;
 
 const Number = styled.div`
     display:inline-block;
@@ -76,6 +92,21 @@ const Quiz = ({ QuizHeader, QizeDesc, Pagenumber })=> {
             </Closebutton>
             </QuizBoxTop>
             <QuizText>{QizeDesc}</QuizText>
+            <BtnWrapper>
+                <div className="answer-btn">
+                    <Button3 
+                        text={"True"}
+                        border={"3px solid #FF715B"}
+                        />
+                </div>
+                <div className="answer-btn">
+                    <Button3
+                        text={"False"}
+                        border={"3px solid #2F52E0"}
+                        />
+                </div>
+
+            </BtnWrapper>
             <Number>{Pagenumber}</Number>
         </QuizBox>
     )
