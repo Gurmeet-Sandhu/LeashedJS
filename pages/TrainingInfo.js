@@ -31,7 +31,7 @@ export default function TrainingInfo() {
 
         <div className="InfoSection">
             <div className="VideoSection">
-                
+    
             </div> 
             <div className="TipBtn">
                 <TipsButton onClick={()=> {
