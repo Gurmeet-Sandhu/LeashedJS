@@ -3,8 +3,10 @@ import TopPart from '../comps/TopPart';
 import ResourceSub from '../comps/ResourceSub';
 import ResourceText from '../comps/ResourceText';
 import {useRouter} from 'next/router';
+import {parseCookies} from '../helpers'
+import axios from 'axios'
 
-export default function Resources() {
+function Resources(props) {
   const router = useRouter()
   const [expanded, setExpanded] = useState(false);
     return (
@@ -28,7 +30,7 @@ export default function Resources() {
                   text="Adaptability"
                   Border=""
                 />
-                <ResourceText text={"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."}/>
+                <ResourceText text={props.data.training.adaptability}/>
               </div>
 
               <div className="ResourcePart Trainability">
@@ -36,7 +38,7 @@ export default function Resources() {
                   text="Trainability"
                   Border="5px solid #FF715B"
                 />
-                <ResourceText text={"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy."}/>
+                <ResourceText text={props.data.training.trainability}/>
               </div >
 
               <div className="ResourcePart Personality">
@@ -44,7 +46,7 @@ export default function Resources() {
                   text="Personality"
                   Border="5px solid #F9CB40"
                 />
-                <ResourceText text={"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text."}/>
+                <ResourceText text={props.data.training.personality}/>
               </div>
 
               <div className="ResourcePart PsysicalNeeds">
@@ -52,7 +54,7 @@ export default function Resources() {
                   text="Physical Needs"
                   Border=""
                 />
-                <ResourceText text={"All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."}/>
+                <ResourceText text={props.data.training.physical_needs}/>
               </div>
 
               <div className="ResourcePart Health">
@@ -60,9 +62,49 @@ export default function Resources() {
                   text="Health And Grooming"
                   Border="5px solid #FF715B"
                 />
-                <ResourceText text={"It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."}/>
+                <ResourceText text={props.data.training.health_and_grooming}/>
             </div>
           </div>
       </div>
     )
   }
+
+  Resources.getInitialProps = async ({req, res}) => {
+    const data = parseCookies(req)
+
+    if (!data.user) {
+        if (res) {
+            res.writeHead(301, { Location: "/Login" })
+            res.end()
+        }
+        else {
+            return { data: undefined }
+        }
+
+    }
+
+    const token = JSON.parse(data.user)
+    console.log("initial props" + data.user)
+
+    // const apiURL = "http://localhost:3003"
+    const apiURL = "https://leashed-server.herokuapp.com"
+    const authAxios = axios.create({
+        baseURL: apiURL,
+        headers: {
+            Authorization: `${token}`
+        }
+    })
+    try {
+        const resp = await authAxios.get('/user/training')
+        const result = {
+            data: resp.data,
+            token: token
+        }
+        return result
+
+    } catch (error) {
+        console.log(error.message)
+    }
+  }
+
+  export default Resources
