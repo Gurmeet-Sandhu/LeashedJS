@@ -1,7 +1,8 @@
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Training from '../../pages/Training';
-
+import axios from 'axios'
 
 const TrainingCard = styled.div`
     margin:10px;
@@ -30,15 +31,45 @@ const Arrow = styled.div`
     display:flex;
     margin-left: -10%;
 `
-const TrainingPageCard = ({title}) =>{
-    return <TrainingCard>
-            <TrainingCardTitle>{title}</TrainingCardTitle>
-            <Arrow><img src="TrainingArrow.png"></img></Arrow>
-        </TrainingCard>
+const TrainingPageCard = ({ id, token }) => {
+    const router = useRouter()
+    const [info, setInfo] = useState({ title: "", duration: 0, days: [], quiz: "" });
+    useEffect(() => {
+
+        const apiURL = "https://leashed-server.herokuapp.com"
+        const authAxios = axios.create({
+            baseURL: apiURL,
+            headers: {
+                Authorization: `${token}`
+            }
+        })
+
+        authAxios.get(`/user/level/${id}`)
+            .then(resp => {
+                setInfo({ ...info, title: resp.data.title, duration: resp.data.duration, days: resp.data.days, quiz: resp.data.quiz })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
+
+    return <TrainingCard key={id} onClick={() => router.push({
+        pathname: '/Training2',
+        query: {
+            pid: id,
+            title: info.title,
+            duration: info.duration,
+            days: info.days,
+            quiz: info.quiz
+        }
+    })}>
+        <TrainingCardTitle>{info.title}</TrainingCardTitle>
+        <Arrow><img src="TrainingArrow.png"></img></Arrow>
+    </TrainingCard>
 }
 
 TrainingPageCard.defaultProps = {
-    title:"Default Title Goes Here",
+    title: "Default Title Goes Here",
 }
 
 export default TrainingPageCard;

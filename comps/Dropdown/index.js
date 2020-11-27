@@ -29,12 +29,12 @@ const Option = styled.option`
 `;
 
 
-const Drop = ({Input0,Input1, Input2, Input3, Input4, Input5, Input6, Input7, Input8, Input9, Input10, Title,}) => {
+const Drop = ({val,handleChange,Input0,Input1, Input2, Input3, Input4, Input5, Input6, Input7, Input8, Input9, Input10, Title,}) => {
     return (
             <div>
             <DropDown>
                 <TopTitle>{Title}</TopTitle>
-                <Select>
+                <Select name={val} onChange={handleChange}>
                     <Option value={Input0}>{Input0}</Option>
                     <Option value={Input1}>{Input1}</Option>
                     <Option value={Input2}>{Input2}</Option>

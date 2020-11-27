@@ -61,7 +61,7 @@ TrainingInfo.getInitialProps = async ({ req, query: { day_id } }) => {
 
     const token = JSON.parse(data.user)
 
-    const apiURL = "http://localhost:3003"
+    const apiURL = "https://leashed-server.herokuapp.com"
     const authAxios = axios.create({
         baseURL: apiURL,
         headers: {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../../comps/Button';
 import Inputs from '../../comps/Inputs';
@@ -84,56 +84,65 @@ margin:5px;
 const Space = styled.div`
 margin:15px;
 `;
-const Createprofbox = ({})=> {
+const Createprofbox = ({
+  info,
+  handleSubmit,
+  handleNameChange,
+  handleWeightChange,
+  handleAgeChange,
+  handleBreedChange,
+  handleGenderChange
+}) => {
 
-    return (
-        <Createprofboxcontainer>
-          <Headerpart>
-          <Createproftext>Create Profile</Createproftext>
-          </Headerpart>
-         
-          <Logincontainer>
-
-            <Inputs label="Dog Name" color="#000000"/>
-            <Sidetoside>
+  return (
+    <Createprofboxcontainer>
+      <Headerpart>
+        <Createproftext>Create Profile</Createproftext>
+      </Headerpart>
+      <form onSubmit={handleSubmit}>
+        <Logincontainer>
+          <Inputs label="Dog Name" color="#000000" val={info.dogName} handleChange={handleNameChange} />
+          <Sidetoside>
             <Birthdaysize>
-            <Inputs label="Dog Birthday" color="#000000"/>
+              <Inputs label="Age" color="#000000" val={info.age} handleChange={handleAgeChange} />
             </Birthdaysize>
             <Weightsize>
-            <Inputs label="Weight (kg)" color="#000000" /> 
+              <Inputs label="Weight (kg)" color="#000000" val={info.weight} handleChange={handleWeightChange} />
             </Weightsize>
-            
-            </Sidetoside>
-            
-            <Drop 
-            Title={"Gender"} 
-            Input0={""} 
-            Input1={"Male"} 
+          </Sidetoside>
+          <Drop
+            val={info.gender}
+            handleChange={handleGenderChange}
+            Title={"Gender"}
+            Input0={""}
+            Input1={"Male"}
             Input2={"Male Neutered"}
-            Input3={"Female"} 
+            Input3={"Female"}
             Input4={"Female Spayed"}
-            color={"#F9CB40"}/>
-            <Space1></Space1>
-            <Drop Title={"Dog Breed"}
-            Input0={""} 
-            Input1={"Labrador Retriever"} 
+            color={"#F9CB40"} />
+          <Space1></Space1>
+          <Drop
+            val={info.breed}
+            handleChange={handleBreedChange}
+            Title={"Dog Breed"}
+            Input0={""}
+            Input1={"Labrador Retriever"}
             Input2={"German Shepherd"}
-            Input3={"French Bulldog"} 
-             color={"#F9CB40"}/>
-            <Space></Space>
-            <Button text={"Create"} bgColor={"#F9CB40"}/>
-            
+            Input3={"French Bulldog"}
+            color={"#F9CB40"} />
+          <Space></Space>
+          <Button type="submit" text={"Create"} bgColor={"#F9CB40"} />
+        </Logincontainer>
+      </form>
+    </Createprofboxcontainer>
+  )
 
-          </Logincontainer>
-        </Createprofboxcontainer>
-    )
-    
 };
-    
-    
-  
- Createprofbox.defaultProps = {
-      
-  };
-  
-  export default Createprofbox;
+
+
+
+Createprofbox.defaultProps = {
+
+};
+
+export default Createprofbox;

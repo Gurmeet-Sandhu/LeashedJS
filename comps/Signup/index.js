@@ -65,7 +65,7 @@ const SignupBox = ({ LoginPart, SignupPart }) => {
     e.preventDefault()
     axios({
       method: 'post',
-      url: 'http://localhost:3003/auth/signup',
+      url: 'https://leashed-server.herokuapp.com/auth/signup',
       data: {
         first_name : info.firstName,
         last_name : info.lastName,
@@ -76,7 +76,7 @@ const SignupBox = ({ LoginPart, SignupPart }) => {
     })
       .then(resp => {
         console.log(resp.data)
-        router.push('/Login')
+        router.push('/Create')
       })
       .catch(err => {
         console.log(err)

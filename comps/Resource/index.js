@@ -7,6 +7,7 @@ const ResourceBox = styled.div`
     border-radius:20px;
 
     div {
+        text-align : center;
         padding: 8px 0px;
         padding-left:20px;
         border-bottom:1px solid #D7D7D7;

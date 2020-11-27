@@ -80,20 +80,25 @@ const LogBox = ({ LoginPart, SignupPart, EmailPart, PasswordPart }) => {
     e.preventDefault()
     axios({
       method: 'post',
-      url: 'http://localhost:3003/auth/login',
+      url: 'https://leashed-server.herokuapp.com/auth/login',
       data: {
         username: username,
         password: password
       }
     })
       .then(resp => {
+        console.log(resp)
         console.log(resp.data.access_token)
         setCookie('user', JSON.stringify(resp.data.access_token), {
           path: "/",
           maxAge: 3600, // Expires after 1hr
           sameSite: true,
         })
-        router.push('/Home')
+        if (!resp.data.user.dogs[0]) {
+          router.push('/Create')
+        } else {
+          router.push('/Home')
+        }
       })
       .catch(err => {
         console.log(err)

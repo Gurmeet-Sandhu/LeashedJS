@@ -55,7 +55,7 @@ const HomeTrainingCard = ({ id, token }) => {
 
     useEffect(() => {
 
-        const apiURL = "http://localhost:3003"
+        const apiURL = "https://leashed-server.herokuapp.com"
         const authAxios = axios.create({
             baseURL: apiURL,
             headers: {
@@ -84,7 +84,7 @@ const HomeTrainingCard = ({ id, token }) => {
                 }
             })}>
                 <TrainingCardHomeTitle>{info.title}</TrainingCardHomeTitle>
-                <TrainingCardHomeDayText>{info.duration}</TrainingCardHomeDayText>
+                <TrainingCardHomeDayText>{info.duration + " Days"}</TrainingCardHomeDayText>
                 <TrainingCardHomeYesterdayText></TrainingCardHomeYesterdayText>
             </TrainingCardHomeBox>
         </TrainingCardHome>
