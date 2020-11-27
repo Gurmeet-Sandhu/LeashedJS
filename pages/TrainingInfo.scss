@@ -5,7 +5,6 @@
     align-items: center;
 }
 
-
 .InfoSection {
     display:flex;
     flex-direction: column;
@@ -17,6 +16,14 @@
     display:flex;
     justify-content: flex-end !important;   
 }
+
+.QuizBox {
+    position: relative;
+    width:90%;
+    height:100%;
+    z-index:99;
+}
+
 
 .TipBox {
     position: relative;

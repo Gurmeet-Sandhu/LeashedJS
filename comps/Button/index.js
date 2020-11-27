@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import styled, {css} from 'styled-components';
+import {MyContext} from '../context';
 
 
 const ButtonWrapper = styled.button`
@@ -24,9 +25,12 @@ const ButtonText = styled.div`
     outline:none;
 `;
 
-const Button= ({text,bgColor, disabled}) => {
+const Button= ({text,bgColor, disabled, onClick}) => {
    
-    return <ButtonWrapper disabled={disabled} bgColor={bgColor} >
+    return <ButtonWrapper 
+            disabled={disabled} 
+            bgColor={bgColor} 
+            onClick={onClick}>
        <ButtonText disabled={disabled}>{text}</ButtonText>
     </ButtonWrapper>
 }
