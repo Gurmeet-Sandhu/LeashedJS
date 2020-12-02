@@ -20,7 +20,6 @@ export default function QuizResult() {
                 />
             </div>
             <div className="ResultBox">
-                    95%
             </div>
             <div className="ResultsButtons">
                 <Button 
