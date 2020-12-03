@@ -6,8 +6,8 @@ import Button3 from '../Button3';
 import { object } from 'prop-types';
 
 const QuizBox = styled.div`
-width:100%;
-min-height: 485px;
+width: 100%;
+min-height: 322px;
 background: #fff;
 border: 5px solid #F9CB40;
 box-sizing: border-box;
@@ -17,7 +17,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 opacity:${props=> props.opacity ? "1" : "0"};
-transform: ${props=>props.transform ? "translateY(0px)" : "translateY(100px)"};
+transform: ${props=>props.transform ? "translateY(0px)" : "translateY(120px)"};
 position:absolute;
 transition: 0.3s all ease;
 `;
@@ -55,7 +55,6 @@ const QuizText = styled.div`
     color:#000;
     flex:10;
     padding:10px;
-    flex:7
 `;
 
 const BtnWrapper = styled.div`
@@ -124,8 +123,7 @@ const Quiz = ({ QuizHeader,  Pagenumber, Answer1, Answer2, Answer3, Answer4, Ans
             });
 		}
 	};
-    return (
-        <QuizBox 
+    return <QuizBox 
         opacity={context.quizbox}
         transform={context.quizbox}>
             <QuizBoxTop>
@@ -144,7 +142,7 @@ const Quiz = ({ QuizHeader,  Pagenumber, Answer1, Answer2, Answer3, Answer4, Ans
 
             </BtnWrapper>
         </QuizBox>
-    )
+    
      
 };
     
