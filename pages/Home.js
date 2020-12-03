@@ -44,7 +44,7 @@ function Home(props) {
                             props.data.training.levels.map((level,index) => {
                                 if((index+1) >= props.data.user.tracker.level)
                                 return (
-                                    <HomeTrainingCard key={level} id={level} token={props.token} />
+                                    <HomeTrainingCard key={level} id={level} token={props.token} tracker = {props.data.user.tracker} />
                                 )
                             })
                         }

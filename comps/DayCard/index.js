@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const DayContainer = styled.div`
@@ -12,8 +13,8 @@ const DayContainer = styled.div`
     align-items:center;
     flex-direction:column;
     text-align:center;
-    background-color:${props=>props.completed ? "#F9CB40" : "#fff"};
-    opacity:${props=>props.completed ? "80%" : "100%"};
+    background-color:${props => props.completed ? "#F9CB40" : "#fff"};
+    opacity:${props => props.completed ? "80%" : "100%"};
 
 `;
 
@@ -34,17 +35,27 @@ const Complete = styled.div`
 `;
 
 
-const DayCard = ({text, date, completed}) =>{
-    const [complete, setComplete] = useState(true);
-    return <DayContainer completed={completed}>
-            <Day>{text}</Day>
-            <Complete>{date}</Complete>
-            </DayContainer>
+const DayCard = ({ id, text, status, completed, days, day_index }) => {
+    const router = useRouter()
+    // const [complete, setComplete] = useState(true);
+    return <DayContainer key={id} completed={completed} onClick={() => {
+        router.push({
+            pathname: '/TrainingInfo',
+            query: {
+                day_id: id,
+                days: days,
+                day_index: day_index
+            }
+        })
+    }}>
+        <Day>{text}</Day>
+        <Complete>{status}</Complete>
+    </DayContainer>
 }
 
 DayCard.defaultProps = {
-    text : "Day N",
-    date : "complete",
+    text: "Day N",
+    date: "complete",
     bgColor: "#fff",
     completed: true
 }

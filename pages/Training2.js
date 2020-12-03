@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import TopPart from '../comps/TopPart';
 import MemoryCard from '../comps/MemoryCard';
 import FinalDayCard from '../comps/FinalDayCard';
 import { useRouter } from 'next/router';
+import DayCard from '../comps/DayCard';
 
 function Training2(props) {
 
-    console.warn('data', props)
+    console.warn('trainin2 props', props)
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -25,7 +26,7 @@ function Training2(props) {
                     // }}
                     TopHeight="200px"
                     Pagename={props.title}
-                    Stat="You are on: Day 1"
+                    Stat={"You are on: Day" + props.day_no}
 
                 // icon={"/arrow_b_l.png"}
                 />
@@ -33,14 +34,34 @@ function Training2(props) {
             <div className="DaysSection">
                 {
                     props.days.map((day, index) => {
-                        return (
-                            <MemoryCard
+                        if ((index + 1) < props.day_no) {
+                            return (
+                                // <MemoryCard
+                                //     id={day}
+                                //     text={"Day " + (index + 1)}
+                                //     border="5px solid #F9CB40"
+                                //     date="Incomplete"
+                                // />
+                                <DayCard
+                                    id={day}
+                                    days={props.days}
+                                    day_index={index}
+                                    text={"Day " + (index + 1)}
+                                    completed={true}
+                                    status="completed"
+                                />
+                            )
+                        } else {
+                            return (<DayCard
                                 id={day}
+                                days={props.days}
+                                day_index={index}
                                 text={"Day " + (index + 1)}
-                                border="5px solid #F9CB40"
-                                date="Incomplete"
-                            />
-                        )
+                                completed={false}
+                                status="incomplete"
+                            />)
+                        }
+
                     })
                 }
 
@@ -80,13 +101,13 @@ function Training2(props) {
                         date="Incomplete"
                     />
                 </div> */}
-                <div className="FinalDay">
+                {/* <div className="FinalDay">
                     <FinalDayCard
                         day="Day 7"
                         text=" Final Day!"
                         completeion="Incomplete"
                     />
-                </div>
+                </div> */}
             </div>
         </div>
     )

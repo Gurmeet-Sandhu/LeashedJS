@@ -26,10 +26,10 @@ function TrainingInfo(props) {
                     TopHeight="258px"
                     Pagename="Master The Dog Walk"
                     Stat={"Day " + props.data.day_no}
-                    // icon={"/arrow_b_l.png"}
-                    // onClick={() => {
-                    //     router.push('/Training2')
-                    // }}
+                // icon={"/arrow_b_l.png"}
+                // onClick={() => {
+                //     router.push('/Training2')
+                // }}
                 />
             </div>
             <div className="InfoSection">
@@ -46,17 +46,46 @@ function TrainingInfo(props) {
                 </div>
             </div>
             <div className="QuizButton">
-                <Button
+                {(props.data.day_no == 7) && <Button
                     text="Ready? Take the Quiz!"
                     bgColor="#FF715B"
-                />
+                />}
             </div>
+            <div className="next-prev-button-position">
+                {(props.day_index < (props.days.length - 1)) && <div className='Button' onClick={() => {
+                    router.push({
+                        pathname: '/TrainingInfo',
+                        query: {
+                            day_id: props.days[props.data.day_no],
+                            days: props.days,
+                            day_index: props.data.day_no
+                        }
+                    })
+                }}>
+                    next
+                </div>}
+            </div>
+            <div className="next-prev-button-position">
+                {(props.day_index > 0) && <div className='Button' onClick={() => {
+                    router.push({
+                        pathname: '/TrainingInfo',
+                        query: {
+                            day_id: props.days[props.data.day_no - 2],
+                            days: props.days,
+                            day_index: props.data.day_no - 2
+                        }
+                    })
+                }}>
+                    prev
+                </div>}
+            </div>
+
 
         </div>
     )
 }
 
-TrainingInfo.getInitialProps = async ({ req, query: { day_id } }) => {
+TrainingInfo.getInitialProps = async ({ req, query: { day_id, days, day_index } }) => {
     const data = parseCookies(req)
 
     const token = JSON.parse(data.user)
@@ -71,7 +100,9 @@ TrainingInfo.getInitialProps = async ({ req, query: { day_id } }) => {
     try {
         const resp = await authAxios.get(`/user/day/${day_id}`)
         const result = {
-            data: resp.data
+            data: resp.data,
+            days: days,
+            day_index: day_index
         }
         return result
 
