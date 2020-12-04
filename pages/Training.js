@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import TopPart from '../comps/TopPart';
 import TrainingPageCard from '../comps/TrainingPageCard';
 import { useRouter } from 'next/router';
-import axios from 'axios'
-import { parseCookies } from '../helpers'
+import axios from 'axios';
+import { parseCookies } from '../helpers';
 
 function Training(props) {
   console.warn('training page data', props.data)
@@ -50,7 +50,7 @@ function Training(props) {
   )
 }
 
-Training.getInitialProps = async ({ req }) => {
+Training.getInitialProps = async ({ req}) => {
 
   const data = parseCookies(req)
 

@@ -29,6 +29,7 @@ const Button2= ({text,bgColor,highlighted}) => {
             bgColor={bgColor} 
             onClick={()=> { 
                 setHighlight(!highlight);
+                
             }}>
             <ProfButtonText>{text}</ProfButtonText>
             </ProfButtonWrapper>

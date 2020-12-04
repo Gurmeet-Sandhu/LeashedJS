@@ -15,7 +15,7 @@ const MemoryCardContainer = styled.div`
     align-items:center;
     flex-direction:column;
     text-align:center;
-    margin:20px 50px;
+    margin:20px;
 
 `
 

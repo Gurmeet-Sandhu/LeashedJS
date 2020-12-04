@@ -14,10 +14,10 @@ const Label = styled.div`
     text-align: left;
 `
 
-const Inputs = ({ label, color, type, val, handleChange }) => {
+const Inputs = ({ label, color, type, val, handleChange, state }) => {
     return <div>
         <Label style={{ color: color }}>{label}</Label>
-        <InputBox type={type} value={val} onChange={handleChange}></InputBox>
+        <InputBox type={type} value={val} onChange={handleChange} disabled={state}></InputBox>
     </div>
 }
 

@@ -25,20 +25,22 @@ export default function Settings() {
         </div>
                 <div className="SettingsSection">
                     <div className="ProfileImage">
-
+                        <img class="image" src="/profile.png" width="100%" height="100%">
+                        </img>
                     </div>
                     <div className="DogSettings">
                             <Inputs 
                                 label="Dog Name"
-                            />
-                        <div className="DualInput">
-                            <Inputs 
-                                label="Dog Birthday "
+                                state="true"
                             />
                             <Inputs 
-                            label="Weight "
+                                label="Birthday "
+                                state="true"
                             />
-                        </div>
+                            <Inputs 
+                                label="Weight "
+                                state="true"
+                            />
                         <div className="SingleInput">
                             <Drop 
                                 Title="Gender"
@@ -59,20 +61,25 @@ export default function Settings() {
                     <div className="OwnerSettings">
                         <Inputs 
                             label="User name "
+                            state="true"
                         />
                         <Inputs 
                             label="Dog Owner's Name "
+                            state="true"
                         />
                         <Inputs 
                             label="Email "
+                            state="true"
                         />
                         <Inputs 
                             label="Password"
+                            state="true"
                         />
                         <Button2 
                             bgColor="#F9CB40"
                             text="Edit"
                         />
+                        
                     </div>
               </div>
      </div>

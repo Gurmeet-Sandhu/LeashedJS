@@ -123,7 +123,6 @@ const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7,
             </BackButton>
             <Img src="/profile.png" width="100%" height="100%">
             </Img>
-            <NameBox><h1 className="Name1">{Name1}</h1> <h1>&nbsp; &amp; &nbsp;</h1> <h1 className="Name2">{Name2}</h1></NameBox>
             <Link href="/Settings"><EditBox>Edit Profile</EditBox></Link>
         </TopContainer>
 

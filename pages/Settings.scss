@@ -21,9 +21,19 @@
     overflow: hidden;
     width: 100vw;
     display:flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
 }
 
 .SingleInput {
     margin: 5%;
+} 
+
+.image {
+    margin:20px 0px;
+    width: 184px; 
+    height: 184px;
+    border-radius: 25px;
+
 }
