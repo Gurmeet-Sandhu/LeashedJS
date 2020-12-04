@@ -12,6 +12,11 @@ const TrainingCardCont = styled.div`
     justify-content:center;
     align-items:center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
+    @media screen and (max-height: 568px) {
+        width:280px;
+        height:140px;
+     }
 `
 const TrainingCardTitle = styled.div`
     color:white;
@@ -21,18 +26,35 @@ const TrainingCardTitle = styled.div`
     margin-right:110px;
     margin-bottom:30px;
     opacity:0.7;
+
+    @media screen and (max-height: 568px) {
+        font-size:22px;
+        margin-left:20px;
+     }
 `
 
 const Lock = styled.div`
    position:relative;
    left:50%;
+   width:100px;
+
+   img {
+       width:100%;
+       height:auto;
+   }
    
 `
 const Arrow = styled.div`
     background:transparent;
     display:flex;
     position:relative;
-    right: 19%;
+    width:30px;
+    margin-left:20px;
+
+    img {
+        width:100%;
+        height:100%;
+    }
 
 `
 

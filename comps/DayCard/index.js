@@ -16,6 +16,11 @@ const DayContainer = styled.div`
     opacity:${props=>props.completed ? "80%" : "100%"};
     margin:5px;
 
+    @media screen and (max-height: 568px) {
+        width:80px;
+        height:80px;
+     }
+
 `;
 
 

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ParaCont = styled.p`
-    width: 343px;
-    font-size:20px;
+    width: 80%;
+    font-size:12pt;
 
 `
 const Paragraphs = ({content}) =>{
