@@ -12,7 +12,7 @@ const ButtonWrapper = styled.button`
     padding:4px;
     border:none;
     border-radius:25px;
-    background-color:${props => props.disabled ? "#2F52E0" : "RGBA(47,82,224,0.14)"};
+    background-color:${props => props.disabled ? "RGBA(47,82,224,0.14)" : "#2F52E0"};
     outline:none;
 `;
 
@@ -21,26 +21,23 @@ const ButtonText = styled.div`
     border:none;
     margin:5px;
     backgroundcolor:transparent;
-    color:${props => props.disabled ? "#fff" : "#000"};
+    color:${props => props.disabled ?  "#000" : "#fff"};
     outline:none;
 `;
 
-const Button = ({ text, bgColor, click, type, onClick }) => {
-    const [clicked, setClicked] = useState(false);
+const Button = ({ text, bgColor, disabled, onClick }) => {
 
-    useEffect(() => {
-        setClicked(click);
-    }, [click])
-
-    return <ButtonWrapper type={type} clicked={clicked} onClick={onClick} bgColor={bgColor}>
-        <ButtonText>{text}</ButtonText>
+    return <ButtonWrapper
+        disabled={disabled} 
+        onClick={onClick}
+        bgColor={bgColor}>
+        <ButtonText disabled={disabled}>{text}</ButtonText>
     </ButtonWrapper>
 }
 
 Button.defaultProps = {
     text: "default",
     bgColor: "#111",
-    click: false
 }
 
 

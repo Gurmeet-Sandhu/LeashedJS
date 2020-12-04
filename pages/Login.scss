@@ -23,7 +23,11 @@ body {
 }
 
 .LoginSection{
-    flex:3.5;
+    width:100%;
+    flex:4;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .stackedlogo{

@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components'
 
+const InputWrapper = styled.div`
+    width:100%;
+    margin:5px 0px;
+    @media screen and (max-height: 568px) {
+       margin:5px 0px;
+    }
+`;
+
 const InputBox = styled.input`
     background: transparent;
     border: none;
@@ -8,6 +16,7 @@ const InputBox = styled.input`
     width:270px;
     outline:none;
     margin-bottom:20px;
+
 `
 const Label = styled.div`
     font-size: 20px;
@@ -15,10 +24,10 @@ const Label = styled.div`
 `
 
 const Inputs = ({ label, color, type, val, handleChange }) => {
-    return <div>
+    return <InputWrapper>
         <Label style={{ color: color }}>{label}</Label>
         <InputBox type={type} value={val} onChange={handleChange}></InputBox>
-    </div>
+    </InputWrapper>
 }
 
 Inputs.defaultProps = {
