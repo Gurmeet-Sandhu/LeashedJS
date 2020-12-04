@@ -27,6 +27,10 @@ const Button2= ({text,bgColor,highlighted, onClick}) => {
     const [highlight, setHighlight] = useState(true);
     return <ProfButtonWrapper highlighted={highlight} 
             bgColor={bgColor} 
+            onClick={()=> { 
+                setHighlight(!highlight);
+                
+            }}>
             onClick={onClick}>
             <ProfButtonText>{text}</ProfButtonText>
             </ProfButtonWrapper>

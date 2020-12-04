@@ -28,6 +28,11 @@ const Inputs = ({ label, color, type, val, handleChange }) => {
         <Label style={{ color: color }}>{label}</Label>
         <InputBox type={type} value={val} onChange={handleChange}></InputBox>
     </InputWrapper>
+const Inputs = ({ label, color, type, val, handleChange, state }) => {
+    return <div>
+        <Label style={{ color: color }}>{label}</Label>
+        <InputBox type={type} value={val} onChange={handleChange} disabled={state}></InputBox>
+    </div>
 }
 
 Inputs.defaultProps = {
