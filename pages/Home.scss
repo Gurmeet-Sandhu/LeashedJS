@@ -26,9 +26,10 @@ body {
     width:100%;
 }
 
-.TrainingSection, .Recent-activity {
+.TrainingSection, .Recent-activity, .Resourece-section {
     display:flex;
     flex-direction: column;
+    margin-bottom:10px;
 
 }
 
@@ -46,11 +47,8 @@ body {
     overflow: auto;
 }
 
-.Resourece-section {
+.resource-box {
+    width:100%;
     display:flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding-bottom:20px;
 }
-

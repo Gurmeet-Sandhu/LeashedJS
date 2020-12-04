@@ -20,10 +20,10 @@ const MenuContainer = styled.div`
 
 const TopContainer = styled.div`
     width: 100%; 
+    height:40%;
     display: flex;
     border-radius: 0px 20px 0px 0px;
     background-color: #2F52E0;
-    display: flex; 
     flex-direction: column;
     justify-content: center; 
     align-items: center;
@@ -39,18 +39,40 @@ const BackButton = styled.div`
     left:15px;
 `;
 
-const Img = styled.img`
-    margin:20px 0px;
+const Img = styled.div`
     width: 184px; 
     height: 184px;
     border-radius: 25px;
 
+    @media screen and (min-height: 668px) and (max-height: 736px) {
+        margin-top:20px;
+     }
+
+    @media screen and (min-height: 569px) and (max-height: 667px) {
+        margin-top:10px;
+        width:140px;
+        height:140px;
+     }
+
+     @media screen and (max-height: 568px) {
+        margin-top:20px;
+        width:130px;
+        height:130px;
+     }
+
+    img {
+        border-radius: 25px;
+        width : 100%;
+        height : 100%;
+    }
 `;
 
 const NameBox = styled.div`
     font-size: 13px;
     color: #fff;
     display: flex; 
+    margin-top:-5px;
+    margin-bottom:-5px;
     .Name1 {
         color:#F9CB40;
         
@@ -65,25 +87,27 @@ const EditBox = styled.a`
     color: #fff;
     cursor: pointer;
     margin-bottom:10px;
+
+    @media screen and (max-height: 568px) {
+        margin-bottom:20px;
+     }
 `;
 
 //Bottom Container Styles
 
 const BottomContainer = styled.div`
+    height:60%;
     display: flex;
     border-radius: 0px 20px 0px 0px;
     display: flex; 
     flex-direction: column;
-
+    padding-left:20px;
+    justify-content:space-around;
     .mainmenu {
-        margin-left:20px;
         display:flex;
         flex-direction:column;
     }
 
-    .submenu {
-        margin-left:20px;
-    }
 `;
 
 
@@ -91,7 +115,7 @@ const MenuCat = styled.a`
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    margin: 20px 0px;
+    margin: 10px 0px;
 
 `;
 
@@ -101,7 +125,7 @@ const SmallTxt = styled.div`
     color: #1B2121;
     opacity: 0.8;
     cursor: pointer;
-    margin: 10px 0px;
+    margin: 5px 0px;
 `;
 
 
@@ -121,7 +145,7 @@ const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7,
             <BackButton onClick={onClick}>
                 <img src="/Back.png" />
             </BackButton>
-            <Img src="/profile.png" width="100%" height="100%">
+            <Img><img src="/profile.png"/>
             </Img>
             <NameBox><h1 className="Name1">{Name1}</h1> <h1>&nbsp; &amp; &nbsp;</h1> <h1 className="Name2">{Name2}</h1></NameBox>
             <Link href="/Settings"><EditBox>Edit Profile</EditBox></Link>
