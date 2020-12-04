@@ -29,6 +29,7 @@ function Training(props) {
             return (<TrainingPageCard
               id={level}
               token={props.token}
+              day_no={props.data.user.tracker.day_no}
             />)
           })
         }
@@ -51,6 +52,8 @@ function Training(props) {
 }
 
 Training.getInitialProps = async ({ req}) => {
+
+
 
   const data = parseCookies(req)
 

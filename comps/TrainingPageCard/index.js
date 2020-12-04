@@ -31,9 +31,9 @@ const Arrow = styled.div`
     display:flex;
     margin-left: -10%;
 `
-const TrainingPageCard = ({ id, token }) => {
+const TrainingPageCard = ({ id, token, day_no }) => {
     const router = useRouter()
-    const [info, setInfo] = useState({ title: "", duration: 0, days: [], quiz: "" });
+    const [info, setInfo] = useState({ title: "", duration: 0, days: [], quiz: "", day_no: day_no });
     useEffect(() => {
 
         const apiURL = "https://leashed-server.herokuapp.com"
@@ -60,7 +60,8 @@ const TrainingPageCard = ({ id, token }) => {
             title: info.title,
             duration: info.duration,
             days: info.days,
-            quiz: info.quiz
+            quiz: info.quiz,
+            day_no: info.day_no
         }
     })}>
         <TrainingCardTitle>{info.title}</TrainingCardTitle>

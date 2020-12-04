@@ -13,3 +13,34 @@
     display: flex;
     margin: 5%;
 }
+
+.Tips {
+    margin-top: 50px;
+    width: 30vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+}
+
+.Button{
+    width: 100px;
+    height: 50px;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.next-prev-button-position{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

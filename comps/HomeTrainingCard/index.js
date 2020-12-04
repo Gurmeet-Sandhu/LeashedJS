@@ -48,12 +48,16 @@ const TrainingCardHomeYesterdayText = styled.div`
     margin-left:-70px;
 `
 
-const HomeTrainingCard = ({ id, token }) => {
+const HomeTrainingCard = ({ id, token, tracker }) => {
+    console.warn('hometrainingcard',id, token, tracker )
 
     const router = useRouter()
-    const [info, setInfo] = useState({ title: "", duration: 0, days: [], quiz: "" });
+    const [info, setInfo] = useState({ title: "", duration: 0, days: [], quiz: "", day_no : tracker.day_no });
 
     useEffect(() => {
+        if(!token){
+            router.push('/Login')
+        }
 
         const apiURL = "https://leashed-server.herokuapp.com"
         const authAxios = axios.create({
@@ -80,7 +84,8 @@ const HomeTrainingCard = ({ id, token }) => {
                     title: info.title,
                     duration: info.duration,
                     days: info.days,
-                    quiz: info.quiz
+                    quiz: info.quiz,
+                    day_no : info.day_no
                 }
             })}>
                 <TrainingCardHomeTitle>{info.title}</TrainingCardHomeTitle>

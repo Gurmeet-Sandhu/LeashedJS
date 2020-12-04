@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState, useContext} from 'react';
+import {MyContext} from '../context';
 import styled, { css } from 'styled-components';
 
 
@@ -24,16 +25,14 @@ const ButtonText = styled.div`
     outline:none;
 `;
 
-const Button = ({ text, bgColor, click, type }) => {
+const Button = ({ text, bgColor, click, type, onClick }) => {
     const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
         setClicked(click);
     }, [click])
 
-    return <ButtonWrapper type={type} clicked={clicked} onClick={() => {
-        setClicked(true)
-    }} bgColor={bgColor}>
+    return <ButtonWrapper type={type} clicked={clicked} onClick={onClick} bgColor={bgColor}>
         <ButtonText>{text}</ButtonText>
     </ButtonWrapper>
 }
