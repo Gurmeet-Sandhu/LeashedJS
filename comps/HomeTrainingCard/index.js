@@ -5,11 +5,7 @@ import { useRouter } from 'next/router'
 
 
 const CardsContainer = styled.div`
-    padding: 20px;
-`
-
-const TrainingCardHome = styled.div`
-    
+    padding-right : 15px;
 `
 
 const TrainingCardHomeBox = styled.div`
@@ -76,7 +72,6 @@ const HomeTrainingCard = ({ id, token, tracker }) => {
             })
     }, [])
     return <CardsContainer>
-        <TrainingCardHome>
             <TrainingCardHomeBox key={id} onClick={() => router.push({
                 pathname: '/Training2',
                 query: {
@@ -92,7 +87,6 @@ const HomeTrainingCard = ({ id, token, tracker }) => {
                 <TrainingCardHomeDayText>{info.duration + " Days"}</TrainingCardHomeDayText>
                 <TrainingCardHomeYesterdayText></TrainingCardHomeYesterdayText>
             </TrainingCardHomeBox>
-        </TrainingCardHome>
     </CardsContainer>
 }
 HomeTrainingCard.defaultProps = {

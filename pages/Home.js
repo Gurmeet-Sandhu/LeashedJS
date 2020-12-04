@@ -49,26 +49,7 @@ function Home(props) {
                                 return <HomeTrainingCard key={level} id={level} token={props.token} tracker = {props.data.user.tracker} />
                             })
                         }
-                        {/* <HomeTrainingCard
-                        title="Master The Dog Walk"
-                        day="Day 5"
-                        date="Yesterday"
-                    />
-                    <HomeTrainingCard
-                        title="Master The Dog Walk"
-                        day="Day 5"
-                        date="Yesterday"
-                    />
-                    <HomeTrainingCard
-                        title="Master The Dog Walk"
-                        day="Day 5"
-                        date="Yesterday"
-                    />
-                    <HomeTrainingCard
-                        title="Master The Dog Walk"
-                        day="Day 5"
-                        date="Yesterday"
-                    /> */}
+
                     </div>
                 </div>
                 <div className="Recent-activity"  >
@@ -89,26 +70,13 @@ function Home(props) {
                             })
 
                         }
-
-                        {/* <MemoryCard
-                            text="Master The Dog Walk "
-                            date="Yesterday"
-                        />
-                        <MemoryCard
-                            text="Master The Dog Walk "
-                            border="5px solid #2F52E0"
-                            date="Yesterday"
-                        />
-                        <MemoryCard
-                            text="Master The Dog Walk "
-                            border="5px solid #FF715B"
-                            date="Yesterday"
-                        /> */}
                     </div>
                 </div>
                 <div className="Resourece-section" onClick={() => router.push('/Resources')}>
                     <Subheading text="Resources" />
-                    <Resource breed={props.data.training.breed} />
+                    <div className="resourcebox">
+                        <Resource breed={props.data.training.breed} />
+                    </div>
                 </div>
 
             </div>

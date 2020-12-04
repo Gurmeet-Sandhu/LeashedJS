@@ -5,6 +5,7 @@ import ResourceText from '../comps/ResourceText';
 import {useRouter} from 'next/router';
 import {parseCookies} from '../helpers'
 import axios from 'axios'
+import DogBox from '../comps/DogBox';
 
 function Resources(props) {
   const router = useRouter()
@@ -24,7 +25,10 @@ function Resources(props) {
             />
           </div>
           <div className="ResourceSection">
+          <div className="dog">
 
+          <DogBox dogname="Welsh Corgi"/>
+          </div>
               <div className="ResourcePart Adaptability">
                 <ResourceSub 
                   text="Adaptability"

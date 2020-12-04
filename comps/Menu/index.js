@@ -130,7 +130,7 @@ const MenuBox = ({Name1, Name2, Menu1, Menu2, Menu3, Menu4, Menu5, Menu6, Menu7,
             <div className="mainmenu">
             <Link href="/Home"><MenuCat>{Menu1}</MenuCat></Link>
             <Link href="/Training"><MenuCat>{Menu2}</MenuCat></Link>
-            <Link href="#"><MenuCat>{Menu3}</MenuCat></Link>
+            <Link href="/Acheivement"><MenuCat>{Menu3}</MenuCat></Link>
             <Link href="/Resources"><MenuCat>{Menu4}</MenuCat></Link>
             </div>
             <div className="submenu">

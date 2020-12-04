@@ -9,6 +9,7 @@ function Training(props) {
   console.warn('training page data', props.data)
   const router = useRouter()
   const [expanded, setExpanded] = useState(false);
+  const [lock, setLock] = useState(true);
   return (
     <div className="TrainingContainer">
       <div className="TopBar">
@@ -23,28 +24,20 @@ function Training(props) {
           }}
         />
       </div>
-      <div className="TrainingCard">
-        {
-          props.data.training.levels.map(level => {
-            return (<TrainingPageCard
-              id={level}
-              token={props.token}
-              day_no={props.data.user.tracker.day_no}
-            />)
-          })
-        }
-        {/* <TrainingPageCard 
-          title="Master the Dog Walk"
-          />
-          <TrainingPageCard 
-          title="Pee & Poo"
-          />
-          <TrainingPageCard 
-          title="Basic Dog Commands"
-          />
-          <TrainingPageCard 
-          title="Socialization"
-          /> */}
+
+      <div className="Training_Cards">
+        <div className="traning_card">
+          {
+            props.data.training.levels.map(level => {
+              return (<TrainingPageCard
+                id={level}
+                token={props.token}
+                day_no={props.data.user.tracker.day_no}
+                lock={lock}
+              />)
+            })
+          }
+        </div>
       </div>
     </div>
 

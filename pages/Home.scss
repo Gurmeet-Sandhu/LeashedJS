@@ -23,7 +23,7 @@ body {
     font-weight: bold;
 }
 
-.TrainingSection, .Recent-activity {
+.TrainingSection, .Recent-activity, .Resourece-section{
     display:flex;
     flex-direction: column;
 
@@ -33,19 +33,26 @@ body {
     display: flex; 
     flex-direction: row;
     overflow: scroll;
+    margin-left:20px;
 }
 
 .ActivityCards {
     display: flex; 
     flex-direction: row;
     overflow: auto;
+    margin-left:20px;
+
 }
 
 .Resourece-section {
-    display:flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    display:flex;
     padding-bottom:20px;
 }
 
+.resourcebox {
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}

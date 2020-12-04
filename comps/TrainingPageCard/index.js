@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Training from '../../pages/Training';
 import axios from 'axios'
 
 const TrainingCard = styled.div`
@@ -12,26 +11,69 @@ const TrainingCard = styled.div`
     box-shadow: 2px 4px 5px 3px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     display:flex;
-    justify-content:center;
+    justify-content:space-around;
     align-items:center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    max-width:400px;
+    position:relative;
+
+    @media screen and (max-height: 568px) {
+        width:280px;
+        height:140px;
 `
 
 const TrainingCardTitle = styled.div`
-    color:white;
+    color:#fff;
     font-size:28px;
     font-weight:bold;
     max-width:190px;
-    margin-right:70px;
-    margin-bottom:30px;
+    @media screen and (max-height: 568px) {
+        font-size:22px;
+        margin-left:20px;
+     }
 `
 
 const Arrow = styled.div`
     background:transparent;
     display:flex;
-    margin-left: -10%;
+    width:30px;
+    img {
+        width:100%;
+        height:100%;
+    }
+    @media screen and (max-height: 568px) {
+        width:30px;
+        margin-right:10px;
+     }
+`;
+
+const LockedCon = styled.div`
+     width:100%;
+     height:100%;
+     position:absolute;
+     z-index:50;
+     background-color:#000;
+     opacity:${props => props.locked ? "0.5" : "0"};
+     top:0;
+     left:0;
+     border-radius: 30px;
+     display:flex;
+     justify-content:center;
+     align-items: center;
+`;
+
+const Lock = styled.div`
+    position:absolute;
+    z-index:99;
+    opacity:${props => props.locked ? "1": "0"};
+   img {
+       width:100%;
+       height:auto;
+   }
+   
 `
-const TrainingPageCard = ({ id, token, day_no }) => {
+
+const TrainingPageCard = ({ id, token, day_no, lock}) => {
     const router = useRouter()
     const [info, setInfo] = useState({ title: "", duration: 0, days: [], quiz: "", day_no: day_no });
     useEffect(() => {
@@ -66,6 +108,8 @@ const TrainingPageCard = ({ id, token, day_no }) => {
     })}>
         <TrainingCardTitle>{info.title}</TrainingCardTitle>
         <Arrow><img src="TrainingArrow.png"></img></Arrow>
+        <LockedCon locked={lock}/>
+        <Lock locked={lock}><img src="lock.png"></img></Lock>
     </TrainingCard>
 }
 
