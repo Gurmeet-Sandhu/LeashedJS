@@ -73,7 +73,9 @@ export default function Home() {
             </div>
             <div className="Resourece-section" onClick={() => router.push('/Resources')}>
                 <Subheading text="Resources"/>
+                <div class="resource-box">
                 <Resource breed={"Welsh Corgi"}/>
+                </div>
             </div>
 
         </div>
