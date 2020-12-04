@@ -36,12 +36,12 @@ export default function Home() {
                         date="Yesterday"
                     />
                     <HomeTrainingCard 
-                        title="Master The Dog Walk"
+                        title="Basic Commands"
                         day="Day 5"
                         date="Yesterday"
                     />
                     <HomeTrainingCard 
-                        title="Master The Dog Walk"
+                        title="Pee & Poo"
                         day="Day 5"
                         date="Yesterday"
                     />

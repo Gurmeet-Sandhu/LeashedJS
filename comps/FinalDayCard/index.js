@@ -10,7 +10,14 @@ const FinalDayCardContainer = styled.div`
     height: 135px;
     border: solid 5px #FF715B; 
     border-radius: 20px;
+
+    @media screen and (max-height: 568px) {
+    width:250px;
+    height:130px;
+    }
 `
+
+
 
 const FinalDayCardDayTitle = styled.div`
     font-size:16pt;
