@@ -20,13 +20,11 @@ const ProfButtonText = styled.div`
     font-weight:bold;
 `;
 
-const TipsButton= ({text,bgColor,highlighted}) => {
+const TipsButton= ({text,bgColor,highlighted, onClick}) => {
     const [highlight, setHighlight] = useState(true);
     return <ProfButtonWrapper highlighted={highlight} 
             bgColor={bgColor} 
-            onClick={()=> { 
-                setHighlight(!highlight);
-            }}>
+            onClick={onClick}>
             <ProfButtonText>{text}</ProfButtonText>
             </ProfButtonWrapper>
 }

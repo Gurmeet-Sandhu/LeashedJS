@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import TopPart from '../comps/TopPart';
-import MemoryCard from '../comps/MemoryCard';
+import DayCard from '../comps/DayCard';
 import FinalDayCard from '../comps/FinalDayCard';
 import { useRouter } from 'next/router';
-import DayCard from '../comps/DayCard';
 
 function Training2(props) {
 
@@ -34,33 +33,44 @@ function Training2(props) {
             <div className="DaysSection">
                 {
                     props.days.map((day, index) => {
-                        if ((index + 1) < props.day_no) {
-                            return (
-                                // <MemoryCard
-                                //     id={day}
-                                //     text={"Day " + (index + 1)}
-                                //     border="5px solid #F9CB40"
-                                //     date="Incomplete"
-                                // />
-                                <DayCard
+                        return(
+                            <DayCard
                                     id={day}
+                                    title = {props.title}
+                                    quiz_id ={props.quiz}
                                     days={props.days}
                                     day_index={index}
                                     text={"Day " + (index + 1)}
-                                    completed={true}
-                                    status="completed"
+                                    completed={false}
+                                    status="Incomplete"
                                 />
-                            )
-                        } else {
-                            return (<DayCard
-                                id={day}
-                                days={props.days}
-                                day_index={index}
-                                text={"Day " + (index + 1)}
-                                completed={false}
-                                status="incomplete"
-                            />)
-                        }
+                        )
+                        // if ((index + 1) < props.day_no) {
+                        //     return (
+                            
+                        //         <DayCard
+                        //             id={day}
+                        //             title = {props.title}
+                        //             quiz_id ={props.quiz}
+                        //             days={props.days}
+                        //             day_index={index}
+                        //             text={"Day " + (index + 1)}
+                        //             completed={true}
+                        //             status="completed"
+                        //         />
+                        //     )
+                        // } else {
+                        //     return (<DayCard
+                        //         id={day}
+                        //         title = {props.title}
+                        //         quiz_id ={props.quiz}
+                        //         days={props.days}
+                        //         day_index={index}
+                        //         text={"Day " + (index + 1)}
+                        //         completed={false}
+                        //         status="incomplete"
+                        //     />)
+                        // }
 
                     })
                 }

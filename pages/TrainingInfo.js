@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import TopPart from '../comps/TopPart';
 import Paragraphs from '../comps/Paragraphs';
 import TipBox from '../comps/Tips';
@@ -7,10 +7,16 @@ import { useRouter } from 'next/router';
 import { parseCookies } from '../helpers'
 import axios from 'axios'
 import ReactPlayer from 'react-player'
+import Button2 from '../comps/Button2';
+import TipsButton from '../comps/ButtonTips';
+import Quiz from '../comps/Quiz';
+import { MyContext } from '../comps/context';
 
 function TrainingInfo(props) {
+    console.warn('quiz', props.quiz)
     const router = useRouter()
     const [expanded, setExpanded] = useState(false);
+    const context = useContext(MyContext);
 
     return (
         <div className="Background">
@@ -24,7 +30,7 @@ function TrainingInfo(props) {
                         setExpanded(!expanded)
                     }}
                     TopHeight="258px"
-                    Pagename="Master The Dog Walk"
+                    Pagename={props.title}
                     Stat={"Day " + props.data.day_no}
                 // icon={"/arrow_b_l.png"}
                 // onClick={() => {
@@ -36,19 +42,37 @@ function TrainingInfo(props) {
                 <div className="VideoSection">
                     <ReactPlayer url="https://www.youtube.com/watch?v=6pTKZSe0tkI" />
                 </div>
-                <div className="Tips">
-                    {props.data.tip}
+                <div className="TipBtn">
+                    <TipsButton onClick={() => {
+                        context.setTipbox(!context.tipbox)
+                    }} />
                 </div>
+
+                {/* <div className="Tips">
+                    {props.data.tip}
+                </div> */}
+                <div className="TipBox">
+                    <TipBox Header="Tip" Tiptext={props.data.tip} />
+                </div>
+
+                <div className="QuizBox">
+                    <Quiz quiz={props.quiz} />
+                </div>
+
                 <div className="InfoBox">
                     <Paragraphs
                         content={props.data.desc}
                     />
                 </div>
             </div>
+
             <div className="QuizButton">
-                {(props.data.day_no == 7) && <Button
+                {(props.data.day_no == 7) && <Button2
                     text="Ready? Take the Quiz!"
                     bgColor="#FF715B"
+                    onClick={() => {
+                        context.setQuizbox(!context.quixbox)
+                    }}
                 />}
             </div>
             <div className="next-prev-button-position">
@@ -58,7 +82,8 @@ function TrainingInfo(props) {
                         query: {
                             day_id: props.days[props.data.day_no],
                             days: props.days,
-                            day_index: props.data.day_no
+                            day_index: props.data.day_no,
+                            quiz_id: props.quiz_id
                         }
                     })
                 }}>
@@ -72,7 +97,8 @@ function TrainingInfo(props) {
                         query: {
                             day_id: props.days[props.data.day_no - 2],
                             days: props.days,
-                            day_index: props.data.day_no - 2
+                            day_index: props.data.day_no - 2,
+                            quiz_id: props.quiz_id
                         }
                     })
                 }}>
@@ -85,8 +111,20 @@ function TrainingInfo(props) {
     )
 }
 
-TrainingInfo.getInitialProps = async ({ req, query: { day_id, days, day_index } }) => {
+TrainingInfo.getInitialProps = async ({ req,res, query: { day_id, days, day_index, quiz_id, title } }) => {
     const data = parseCookies(req)
+    console.log(quiz_id)
+
+    if (!data.user) {
+        if (res) {
+            res.writeHead(301, { Location: "/Login" })
+            res.end()
+        }
+        else {
+            return { data: undefined }
+        }
+
+    }
 
     const token = JSON.parse(data.user)
 
@@ -99,10 +137,15 @@ TrainingInfo.getInitialProps = async ({ req, query: { day_id, days, day_index } 
     })
     try {
         const resp = await authAxios.get(`/user/day/${day_id}`)
+        const quizData = await authAxios.get(`/user/quiz/${quiz_id}`)
+        console.log(quizData.data)
         const result = {
+            quiz: quizData.data,
             data: resp.data,
             days: days,
-            day_index: day_index
+            day_index: day_index,
+            quiz_id: quiz_id,
+            title :title
         }
         return result
 

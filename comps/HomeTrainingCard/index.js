@@ -49,11 +49,15 @@ const TrainingCardHomeYesterdayText = styled.div`
 `
 
 const HomeTrainingCard = ({ id, token, tracker }) => {
+    console.warn('hometrainingcard',id, token, tracker )
 
     const router = useRouter()
     const [info, setInfo] = useState({ title: "", duration: 0, days: [], quiz: "", day_no : tracker.day_no });
 
     useEffect(() => {
+        if(!token){
+            router.push('/Login')
+        }
 
         const apiURL = "https://leashed-server.herokuapp.com"
         const authAxios = axios.create({

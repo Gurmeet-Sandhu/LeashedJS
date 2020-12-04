@@ -1,11 +1,15 @@
 import './app.scss';
 import { CookiesProvider } from 'react-cookie';
+import MyProvider from '../comps/context';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <CookiesProvider>
-      <Component {...pageProps} />
-    </CookiesProvider>
+    <MyProvider>
+      <CookiesProvider>
+        <Component {...pageProps} />
+      </CookiesProvider>
+    </MyProvider>
+
   )
 
 }

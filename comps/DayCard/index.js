@@ -35,13 +35,15 @@ const Complete = styled.div`
 `;
 
 
-const DayCard = ({ id, text, status, completed, days, day_index }) => {
+const DayCard = ({ id, text, status, completed, days, day_index, quiz_id,title }) => {
     const router = useRouter()
     // const [complete, setComplete] = useState(true);
     return <DayContainer key={id} completed={completed} onClick={() => {
         router.push({
             pathname: '/TrainingInfo',
             query: {
+                title : title,
+                quiz_id: quiz_id,
                 day_id: id,
                 days: days,
                 day_index: day_index
@@ -57,7 +59,7 @@ DayCard.defaultProps = {
     text: "Day N",
     date: "complete",
     bgColor: "#fff",
-    completed: true
+    completed: false
 }
 
 export default DayCard;

@@ -113,7 +113,7 @@ const LogBox = ({ LoginPart, SignupPart, EmailPart, PasswordPart }) => {
       </Headerpart>
       <form onSubmit={handleSubmit}>
         <Logincontainer>
-          <Inputs label="Email" color="#2F52E0" type="text" val={username} handleChange={handleUsernameChange} />
+          <Inputs label="Username" color="#2F52E0" type="text" val={username} handleChange={handleUsernameChange} />
           <Inputs label="Password" color="#2F52E0" type="password" val={password} handleChange={handlePasswordChange} />
           <Button text={"Sign In"} bgColor={"#2F52E0"} type="submit" />
           <div className="loginwith">or Login with</div>
