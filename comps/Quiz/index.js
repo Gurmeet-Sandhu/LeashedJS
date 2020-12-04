@@ -6,7 +6,7 @@ import Button3 from '../Button3';
 import { object } from 'prop-types';
 
 const QuizBox = styled.div`
-width:30%;
+width:50%;
 min-height: 150px;
 background: #fff;
 border: 5px solid #F9CB40;
